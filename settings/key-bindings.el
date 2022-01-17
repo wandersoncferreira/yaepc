@@ -15,4 +15,7 @@
 ;; dired
 (global-set-key (kbd "C-x C-j") 'dired-jump)
 
+;;; bind pop to mark to C-x p due to very hard wired muscle memory
+(global-set-key (kbd "C-x p") 'pop-to-mark-command)
+
 (provide 'key-bindings)

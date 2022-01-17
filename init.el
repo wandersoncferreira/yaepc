@@ -1,15 +1,7 @@
-;; Turn off mouse interface early in startup to avoid momentary display
-(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
-
 ;; Remove security vulnerability
 (eval-after-load "enriched"
   '(defun enriched-decode-display-prop (start end &optional param)
      (list start end)))
-
-;; No splash screen please ... jeez
-(setq inhibit-startup-message t)
 
 ;; Set path to dependencies
 (setq site-lisp-dir
@@ -32,21 +24,7 @@
     (add-to-list 'load-path project)))
 
 (require 'setup-packages)
-
-;; Write backup files to own directory
-(setq backup-directory-alist
-      `(("." . ,(expand-file-name
-                 (concat user-emacs-directory "backups")))))
-
-;; Write all autosave files in the tmp dir
-(setq auto-save-file-name-transforms
-      `((".*" ,temporary-file-directory t)))
-
-;; Don't write lock-files, I'm the only one here
-(setq create-lockfiles nil)
-
-;; Make backups of files, even when they're in version control
-(setq vc-make-backup-files t)
+(require 'appearance)
 
 ;; Are we on a mac?
 (setq is-mac (equal system-type 'darwin))
@@ -57,6 +35,7 @@
      clj-refactor
      clojure-mode
      clojure-mode-extra-font-locking
+     diminish
      exec-path-from-shell
      ido-at-point
      ido-completing-read+
@@ -73,6 +52,9 @@
    (package-refresh-contents)
    (init--install-packages)))
 
+;; Lets start with a smattering of sanity
+(require 'sane-defaults)
+
 (when is-mac
   (require 'exec-path-from-shell)
   (exec-path-from-shell-initialize))
@@ -81,6 +63,7 @@
 (eval-after-load 'ido '(require 'setup-ido))
 (eval-after-load 'dired '(require 'setup-dired))
 
+(require 'setup-encryption)
 (require 'setup-projectile)
 (require 'setup-hippie)
 (require 'setup-paredit)
@@ -101,3 +84,8 @@
 ;; setup key bindings
 (require 'key-bindings)
 
+;; setup work specific files
+(add-hook 'after-init-hook
+          (lambda ()
+            (load-file "~/.emacs.d/settings/work-cisco.el.gpg")
+            (require 'work-cisco)))
