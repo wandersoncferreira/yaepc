@@ -6,7 +6,33 @@
  '(custom-safe-themes
    '("88ca3c337196348f30336f1589f5adcd6a250f82f5551f62ae1de835df50c94e" default))
  '(package-selected-packages
-   '(diminish delight projectile clj-refactor clojure-mode-extra-font-locking cider magit smex exec-path-from-shell paredit ido-vertical-mode ido-completing-read+ ido-at-point)))
+   '(consult orderless vertico diminish delight projectile clj-refactor clojure-mode-extra-font-locking cider magit smex exec-path-from-shell paredit ido-vertical-mode ido-completing-read+ ido-at-point))
+ '(safe-local-variable-values
+   '((eval progn
+           (put 's/defn 'clojure-doc-string-elt 2)
+           (define-clojure-indent
+             (puppetlabs\.trapperkeeper\.core/defservice
+              '(:defn
+                (:defn)))
+             (trapperkeeper/defservice
+              '(:defn
+                (:defn)))
+             (tk/defservice
+              '(:defn
+                (:defn)))
+             (defservice
+               '(:defn
+                 (:defn)))
+             (dotests 2)
+             (context 2)
+             (DELETE 2)
+             (GET 2)
+             (PATCH 2)
+             (POST 2)
+             (PUT 2)))
+     (eval add-to-list 'auto-mode-alist
+           '("\\.clj-template$" . clojure-mode))
+     (magit-todos-exclude-globs "*.html" "*.org" "*.md" "*.map"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -35,15 +35,14 @@
      clj-refactor
      clojure-mode
      clojure-mode-extra-font-locking
+     consult
      diminish
      exec-path-from-shell
-     ido-at-point
-     ido-completing-read+
-     ido-vertical-mode
      magit
+     orderless
      paredit
      projectile
-     smex
+     vertico
      )))
 
 (condition-case nil
@@ -60,9 +59,11 @@
   (exec-path-from-shell-initialize))
 
 ;; setup extensions
-(eval-after-load 'ido '(require 'setup-ido))
+;; (eval-after-load 'ido '(require 'setup-ido))
 (eval-after-load 'dired '(require 'setup-dired))
 
+(require 'setup-vertico)
+(require 'setup-consult)
 (require 'setup-encryption)
 (require 'setup-projectile)
 (require 'setup-hippie)
@@ -73,10 +74,6 @@
 
 ;; load stuff on demand
 (autoload 'auto-complete-mode "auto-complete" nil t)
-
-;; setup smart m-x
-(require 'smex)
-(smex-initialize)
 
 ;; setup files to modes
 (require 'mode-mappings)
