@@ -9,6 +9,7 @@
 
 ;; buffer
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
+(global-set-key (kbd "C-c e b") 'eval-buffer)
 
 ;; dired
 (global-set-key (kbd "C-x C-j") 'dired-jump)
@@ -21,13 +22,9 @@
 (set-register ?k '(file . "~/.emacs.d/settings/key-bindings.el"))
 
 ;;; consult
-(global-set-key (kbd "C-x b") 'consult-buffer)
-(global-set-key (kbd "M-s g") 'consult-ripgrep)
-
 ;; overwrite the projectile variants
 (eval-after-load 'projectile
   (lambda ()
-    (define-key projectile-mode-map (kbd "C-c p s r") 'consult-ripgrep)
-    (define-key projectile-mode-map (kbd "C-c p s g") 'consult-grep)))
+    (define-key projectile-mode-map (kbd "C-c p s") 'consult-ripgrep)))
 
 (provide 'key-bindings)

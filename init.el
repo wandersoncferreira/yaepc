@@ -35,7 +35,7 @@
      clj-refactor
      clojure-mode
      clojure-mode-extra-font-locking
-     consult
+     corfu
      diminish
      exec-path-from-shell
      magit
@@ -59,10 +59,10 @@
   (exec-path-from-shell-initialize))
 
 ;; setup extensions
-;; (eval-after-load 'ido '(require 'setup-ido))
 (eval-after-load 'dired '(require 'setup-dired))
 
 (require 'setup-vertico)
+(require 'setup-corfu)
 (require 'setup-consult)
 (require 'setup-encryption)
 (require 'setup-projectile)

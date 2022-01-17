@@ -60,20 +60,12 @@
 ;; Fontify org-mode code blocks
 (setq org-src-fontify-natively t)
 
-;; Sentences do not need double spaces to end. Period.
-(set-default 'sentence-end-double-space nil)
-
 ;; 80 chars is a good width.
 (set-default 'fill-column 80)
 
 ;; Add parts of each file's directory to the buffer name if not unique
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
-
-;; A saner ediff
-(setq ediff-diff-options "-w")
-(setq ediff-split-window-function 'split-window-horizontally)
-(setq ediff-window-setup-function 'ediff-setup-windows-plain)
 
 ; When popping the mark, continue popping until the cursor actually moves
 ;; Also, if the last command was a copy - skip past all the expand-region cruft.
