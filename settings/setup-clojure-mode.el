@@ -10,6 +10,9 @@
 
 (require 'cider)
 
+;; Hide nrepl buffers when switching buffers (switch to by prefixing with space)
+(setq nrepl-hide-special-buffers t)
+
 (defun bk/clojure--reset ()
   (interactive)
   (cider-nrepl-request:eval
@@ -32,12 +35,14 @@
 ;;; keybindings
 (define-key cider-repl-mode-map (kbd "C-,") 'complete-symbol)
 (define-key cider-mode-map (kbd "C-,") 'complete-symbol)
-(define-key cider-mode-map (kbd "C-c C-l") 'cider-repl-clear-buffer)
+(define-key cider-mode-map (kbd "C-c C-l") 'cider-find-and-clear-repl-buffer)
 
 (define-key clojure-mode-map (kbd "M-s f") 'sf/focus-at-point)
 (define-key clojure-mode-map [remap paredit-forward] 'clojure-forward-logical-sexp)
 (define-key clojure-mode-map [remap paredit-backward] 'clojure-backward-logical-sexp)
-(define-key clojure-mode-map (kbd "C-c C-l") 'cider-find-and-clear-repl-output)
+(define-key clojure-mode-map (kbd "C-c C-l") 'cider-find-and-clear-repl-buffer)
+(define-key clojure-mode-map (kbd "C->") 'clojure-thread)
+(define-key clojure-mode-map (kbd "C-<") 'clojure-unwind)
 
 (define-key clj-refactor-map (kbd "C-x C-r") 'cljr-rename-file)
 

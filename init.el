@@ -27,15 +27,18 @@
 
 (defun init--install-packages ()
   (packages-install
-   '(change-inner
+   '(browse-at-remote
+     change-inner
      cider
      clj-refactor
      clojure-mode
      clojure-mode-extra-font-locking
+     ctrlf
      diff-hl
      diminish
      exec-path-from-shell
      expand-region
+     find-file-in-project
      flx
      flx-ido
      jump-char
@@ -75,6 +78,7 @@
 (require 'setup-projectile)
 (require 'setup-paredit)
 (require 'setup-org)
+(require 'setup-search)
 (require 'expand-region)
 (require 'multiple-cursors)
 (require 'change-inner)

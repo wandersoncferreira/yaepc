@@ -13,7 +13,4 @@
       projectile-completion-system 'ido
       projectile-mode-line-prefix " P")
 
-(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-(define-key projectile-mode-map (kbd "C-c p s") 'projectile-grep)
-
 (provide 'setup-projectile)

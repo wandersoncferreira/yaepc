@@ -8,8 +8,11 @@
 (autoload 'smex "smex")
 
 ;; magit
-(global-set-key (kbd "C-x m") 'magit-status-fullscreen)
+(global-set-key (kbd "C-c g s") 'magit-status-fullscreen)
 (autoload 'magit-status-fullscreen "magit")
+
+(global-set-key (kbd "C-c g g") 'bk/browse-at-remote)
+(global-set-key (kbd "C-c g w") 'bk/copy-permalink-at-point)
 
 ;; buffer
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
@@ -43,5 +46,14 @@
 (set-register ?e '(file . "~/.emacs.d/init.el"))
 (set-register ?k '(file . "~/.emacs.d/settings/key-bindings.el"))
 (set-register ?n '(file . "~/org/notes.org"))
+
+;; projects
+(with-eval-after-load "projectile"
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  (define-key projectile-mode-map (kbd "C-c p s") 'projectile-grep))
+
+;; paredit
+(with-eval-after-load "paredit"
+  (define-key paredit-mode-map (kbd "M-s") nil))
 
 (provide 'key-bindings)

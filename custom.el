@@ -5,6 +5,8 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    '("88ca3c337196348f30336f1589f5adcd6a250f82f5551f62ae1de835df50c94e" default))
+ '(package-selected-packages
+   '(browse-at-remote find-file-in-project ctrlf remind-bindings smex projectile magit jump-char ido-vertical-mode ido-completing-read+ ido-at-point flx-ido exec-path-from-shell diminish diff-hl clojure-mode-extra-font-locking clj-refactor change-inner))
  '(safe-local-variable-values
    '((eval progn
            (put 's/defn 'clojure-doc-string-elt 2)
