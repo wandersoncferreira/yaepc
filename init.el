@@ -1,7 +1,4 @@
-;; Remove security vulnerability
-(eval-after-load "enriched"
-  '(defun enriched-decode-display-prop (start end &optional param)
-     (list start end)))
+;;; Here be dragons!
 
 ;; Set path to dependencies
 (setq site-lisp-dir
@@ -24,25 +21,32 @@
     (add-to-list 'load-path project)))
 
 (require 'setup-packages)
-(require 'appearance)
 
 ;; Are we on a mac?
 (setq is-mac (equal system-type 'darwin))
 
 (defun init--install-packages ()
   (packages-install
-   '(cider
+   '(change-inner
+     cider
      clj-refactor
      clojure-mode
      clojure-mode-extra-font-locking
-     corfu
+     diff-hl
      diminish
      exec-path-from-shell
+     expand-region
+     flx
+     flx-ido
+     jump-char
+     ido-at-point
+     ido-completing-read+
+     ido-vertical-mode
      magit
-     orderless
+     multiple-cursors
      paredit
      projectile
-     vertico
+     smex
      )))
 
 (condition-case nil
@@ -50,6 +54,9 @@
   (error
    (package-refresh-contents)
    (init--install-packages)))
+
+;; changing the looks!
+(require 'appearance)
 
 ;; Lets start with a smattering of sanity
 (require 'sane-defaults)
@@ -60,20 +67,21 @@
 
 ;; setup extensions
 (eval-after-load 'dired '(require 'setup-dired))
+(eval-after-load 'ido '(require 'setup-ido))
+(eval-after-load 'magit '(require 'setup-vc))
+(eval-after-load 'smex '(require 'setup-smex))
 
-(require 'setup-vertico)
-(require 'setup-corfu)
-(require 'setup-consult)
 (require 'setup-encryption)
 (require 'setup-projectile)
-(require 'setup-hippie)
 (require 'setup-paredit)
+(require 'setup-org)
+(require 'expand-region)
+(require 'multiple-cursors)
+(require 'change-inner)
+(require 'jump-char)
 
 ;; language specific setup files
 (eval-after-load 'clojure-mode '(require 'setup-clojure-mode))
-
-;; load stuff on demand
-(autoload 'auto-complete-mode "auto-complete" nil t)
 
 ;; setup files to modes
 (require 'mode-mappings)

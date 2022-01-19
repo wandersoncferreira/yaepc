@@ -36,8 +36,9 @@
 (setq fill-column 80)
 
 ;; Save a list of recent files visited. (open recent file with C-x f)
+(require 'recentf)
 (recentf-mode 1)
-(setq recentf-max-saved-items 100) ;; just 20 is too recent
+(setq recentf-max-saved-items 30)
 
 ;; Undo/redo window configuration with C-c <left>/<right>
 (winner-mode 1)
@@ -60,12 +61,9 @@
 ;; Fontify org-mode code blocks
 (setq org-src-fontify-natively t)
 
-;; 80 chars is a good width.
-(set-default 'fill-column 80)
-
 ;; Add parts of each file's directory to the buffer name if not unique
 (require 'uniquify)
-(setq uniquify-buffer-name-style 'forward)
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 
 ; When popping the mark, continue popping until the cursor actually moves
 ;; Also, if the last command was a copy - skip past all the expand-region cruft.
@@ -82,5 +80,28 @@
 
 ;;; use arrows to move between window
 (windmove-default-keybindings)
+
+;;; macos specific
+(when is-mac
+  (setq mac-command-modifier 'meta
+        mac-option-modifier '(:ordinary super :button 2)
+        mac-pass-control-to-system nil))
+
+;;; save history between sections
+(require 'savehist)
+(savehist-mode +1)
+
+;;; split the window and move the cursor there
+(defun bk/vsplit-last-buffer ()
+  (interactive)
+  (split-window-vertically)
+  (other-window 1 nil)
+  (switch-to-next-buffer))
+
+(defun bk/hsplit-last-buffer ()
+  (interactive)
+  (split-window-horizontally)
+  (other-window 1 nil)
+  (switch-to-next-buffer))
 
 (provide 'sane-defaults)

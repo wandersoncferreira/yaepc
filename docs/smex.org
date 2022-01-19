@@ -1,0 +1,10 @@
+#+title: Smex
+
+1. Often call =smex-show-unbound-commands= to show frequently used commands that
+   have no keybindings.
+
+   You this information to create keybindings to these commands.
+
+2. =C-h f= while smex is active runs =describe-function=
+
+3. =smex-major-mode-commands= are nice to know about!

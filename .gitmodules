@@ -1,0 +1,3 @@
+[submodule "site-lisp/iedit"]
+	path = site-lisp/iedit
+	url = git@github.com:wandersoncferreira/iedit.git

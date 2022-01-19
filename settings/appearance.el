@@ -5,9 +5,10 @@
 
 ;; Don't beep. Don't visible-bell (fails on el capitan). Just blink the modeline on errors.
 (setq visible-bell nil)
-(setq ring-bell-function (lambda ()
-                           (invert-face 'mode-line)
-                           (run-with-timer 0.05 nil 'invert-face 'mode-line)))
+(setq ring-bell-function
+      (lambda ()
+        (invert-face 'mode-line)
+        (run-with-timer 0.05 nil 'invert-face 'mode-line)))
 
 ;; Set custom theme path
 (setq custom-theme-directory (concat user-emacs-directory "themes"))
@@ -20,6 +21,7 @@
 (load-theme 'default-black)
 (set-face-attribute 'default nil :font "Monaco 14")
 
+;; enable matching parens to be highlighted
 (show-paren-mode +1)
 
 ;;; clean the modeline
@@ -27,6 +29,8 @@
 (eval-after-load "eldoc" '(diminish 'eldoc-mode))
 (eval-after-load "paredit" '(diminish 'paredit-mode))
 (eval-after-load "subword" '(diminish 'subword-mode))
+(eval-after-load "autorevert" '(diminish 'auto-revert-mode))
+(eval-after-load "clj-refactor" '(diminish 'clj-refactor-mode))
 
 (defmacro rename-modeline (package-name mode new-name)
   `(eval-after-load ,package-name
@@ -34,5 +38,18 @@
         (setq mode-name ,new-name))))
 
 (rename-modeline "clojure-mode" clojure-mode "Clj")
+
+;; make the frame transparent
+(defun bk/toggle-transparency ()
+  (interactive)
+  (let ((alpha (frame-parameter nil 'alpha)))
+    (set-frame-parameter
+     nil 'alpha
+     (if (eql (cond ((numberp alpha) alpha)
+                    ((numberp (cdr alpha)) (cdr alpha))
+                    ((numberp (cadr alpha)) (cadr alpha)))
+              100)
+         85
+       100))))
 
 (provide 'appearance)

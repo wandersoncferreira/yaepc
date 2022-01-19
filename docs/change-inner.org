@@ -1,0 +1,4 @@
+#+title: Change inner
+
+I bound the commands to =M-i= and =M-o= if you prefix them with =C-u= it copies
+the data instead of killing.
