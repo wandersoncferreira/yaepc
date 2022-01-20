@@ -9,7 +9,24 @@
 ;; enable recentf integration
 (setq ido-use-virtual-buffers t)
 
+;; enable flexible string matching.  Flexible matching means that if
+;; the entered string does not match any item, any item containing the
+;; entered characters in the given sequence will match.
 (setq ido-enable-flex-matching t)
+
+;; Do not confirm unique completions
+(setq ido-confirm-unique-completion nil)
+
+;; By default, Ido arranges matches in the following order:
+;; full-matches > suffix-matches > prefix matches > remaining matches
+;; this can get in the way for buffer switching
+(setq ido-buffer-disable-smart-matches nil)
+
+;; how to visit a new buffer
+(setq ido-default-buffer-method 'selected-window)
+
+;; how to visit a new file
+(setq ido-default-file-method 'selected-window)
 
 ;; change the collection size above which flx will revert to flex matching
 (setq flx-ido-threshold 2000)

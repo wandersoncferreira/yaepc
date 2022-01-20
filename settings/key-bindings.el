@@ -48,6 +48,7 @@
 
 ;; selection
 (global-set-key (kbd "C-=") 'er/expand-region)
+(global-set-key (kbd "C-x C-b") 'ido-switch-buffer-other-window)
 
 ;;; shotcurts
 (set-register ?e '(file . "~/.emacs.d/init.el"))
