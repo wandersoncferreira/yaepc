@@ -35,4 +35,6 @@
   (unless prefix
     (delete-other-windows)))
 
+(require 'git-timemachine)
+
 (provide 'setup-vc)

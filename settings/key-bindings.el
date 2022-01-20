@@ -11,12 +11,19 @@
 (global-set-key (kbd "C-c g s") 'magit-status-fullscreen)
 (autoload 'magit-status-fullscreen "magit")
 
+(global-set-key (kbd "C-c g t") 'git-timemachine)
+
 (global-set-key (kbd "C-c g g") 'bk/browse-at-remote)
 (global-set-key (kbd "C-c g w") 'bk/copy-permalink-at-point)
 
 ;; buffer
+(defun bk/eval-buffer ()
+  (interactive)
+  (eval-buffer)
+  (message "Buffer evaluated"))
+
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
-(global-set-key (kbd "C-c e b") 'eval-buffer)
+(global-set-key (kbd "C-c e b") 'bk/eval-buffer)
 
 ;; window
 (global-set-key (kbd "C-x 2") 'bk/vsplit-last-buffer)
@@ -41,6 +48,9 @@
 
 ;; selection
 (global-set-key (kbd "C-=") 'er/expand-region)
+(global-set-key (kbd "C-c >") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c <") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c m a") 'mc/mark-all-like-this)
 
 ;;; shotcurts
 (set-register ?e '(file . "~/.emacs.d/init.el"))
@@ -55,5 +65,8 @@
 ;; paredit
 (with-eval-after-load "paredit"
   (define-key paredit-mode-map (kbd "M-s") nil))
+
+;; perspective
+(global-set-key (kbd "C-x k") 'persp-kill-buffer*)
 
 (provide 'key-bindings)

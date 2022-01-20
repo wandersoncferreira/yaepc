@@ -41,6 +41,7 @@
      find-file-in-project
      flx
      flx-ido
+     git-timemachine
      jump-char
      ido-at-point
      ido-completing-read+
@@ -48,6 +49,7 @@
      magit
      multiple-cursors
      paredit
+     perspective
      projectile
      smex
      )))
@@ -76,9 +78,11 @@
 
 (require 'setup-encryption)
 (require 'setup-projectile)
+(require 'setup-perspective)
 (require 'setup-paredit)
 (require 'setup-org)
 (require 'setup-search)
+
 (require 'expand-region)
 (require 'multiple-cursors)
 (require 'change-inner)
