@@ -39,7 +39,6 @@
      exec-path-from-shell
      expand-region
      find-file-in-project
-     flx
      flx-ido
      git-timemachine
      jump-char
@@ -47,7 +46,6 @@
      ido-completing-read+
      ido-vertical-mode
      magit
-     multiple-cursors
      paredit
      perspective
      projectile
@@ -75,16 +73,15 @@
 (eval-after-load 'ido '(require 'setup-ido))
 (eval-after-load 'magit '(require 'setup-vc))
 (eval-after-load 'smex '(require 'setup-smex))
+(eval-after-load 'org '(require 'setup-org))
 
 (require 'setup-encryption)
 (require 'setup-projectile)
 (require 'setup-perspective)
 (require 'setup-paredit)
-(require 'setup-org)
 (require 'setup-search)
 
 (require 'expand-region)
-(require 'multiple-cursors)
 (require 'change-inner)
 (require 'jump-char)
 

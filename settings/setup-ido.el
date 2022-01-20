@@ -9,6 +9,11 @@
 ;; enable recentf integration
 (setq ido-use-virtual-buffers t)
 
+(setq ido-enable-flex-matching t)
+
+;; change the collection size above which flx will revert to flex matching
+(setq flx-ido-threshold 2000)
+
 ;; Try out flx-ido for better flex matching between words
 (require 'flx-ido)
 (flx-ido-mode 1)

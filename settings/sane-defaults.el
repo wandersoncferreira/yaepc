@@ -41,15 +41,17 @@
 (setq recentf-max-saved-items 30)
 
 ;; Undo/redo window configuration with C-c <left>/<right>
+(require 'winner)
 (winner-mode 1)
 
 ;; Never insert tabs
 (set-default 'indent-tabs-mode nil)
 
 ;; Show me empty lines after buffer end
-(set-default 'indicate-empty-lines t)
+(setq indicate-empty-lines t)
 
 ;; Easily navigate sillycased words
+(require 'subword)
 (global-subword-mode 1)
 
 ;; Don't break lines for me, please
@@ -78,20 +80,20 @@
 
 (setq set-mark-command-repeat-pop t)
 
-;;; use arrows to move between window
+;; use arrows to move between window
 (windmove-default-keybindings)
 
-;;; macos specific
+;; macos specific
 (when is-mac
   (setq mac-command-modifier 'meta
         mac-option-modifier '(:ordinary super :button 2)
         mac-pass-control-to-system nil))
 
-;;; save history between sections
+;; save history between sections
 (require 'savehist)
 (savehist-mode +1)
 
-;;; split the window and move the cursor there
+;; split the window and move the cursor there
 (defun bk/vsplit-last-buffer ()
   (interactive)
   (split-window-vertically)
@@ -103,5 +105,8 @@
   (split-window-horizontally)
   (other-window 1 nil)
   (switch-to-next-buffer))
+
+;; flx benefits a lot from gc threshold fine tuning
+(setq gc-cons-threshold 20000000)
 
 (provide 'sane-defaults)

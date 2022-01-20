@@ -48,9 +48,6 @@
 
 ;; selection
 (global-set-key (kbd "C-=") 'er/expand-region)
-(global-set-key (kbd "C-c >") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-c <") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c m a") 'mc/mark-all-like-this)
 
 ;;; shotcurts
 (set-register ?e '(file . "~/.emacs.d/init.el"))
