@@ -20,6 +20,9 @@
 (global-set-key (kbd "C-c g g") 'bk/browse-at-remote)
 (global-set-key (kbd "C-c g w") 'bk/copy-permalink-at-point)
 
+(eval-after-load "magit"
+  '(define-key magit-status-mode-map (kbd "C-c r") 'magit-ediff-resolve))
+
 ;; buffer
 (defun bk/eval-buffer ()
   (interactive)
@@ -62,13 +65,14 @@
 (set-register ?n '(file . "~/org/notes.org"))
 
 ;; projects
-(with-eval-after-load "projectile"
-  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-  (define-key projectile-mode-map (kbd "C-c p s") 'projectile-grep))
+(eval-after-load "projectile"
+  '(progn
+     (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+     (define-key projectile-mode-map (kbd "C-c p s") 'projectile-grep)))
 
 ;; paredit
-(with-eval-after-load "paredit"
-  (define-key paredit-mode-map (kbd "M-s") nil))
+(eval-after-load "paredit"
+  '(define-key paredit-mode-map (kbd "M-s") nil))
 
 ;; perspective
 (global-set-key (kbd "C-x k") 'persp-kill-buffer*)
