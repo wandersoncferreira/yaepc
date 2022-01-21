@@ -17,7 +17,7 @@
   (when (file-directory-p path)
     (add-to-list 'custom-theme-load-path path)))
 
-(load-theme 'default-black)
+(load-theme 'default-black t)
 (set-face-attribute 'default nil :font "Monaco 14")
 
 ;; enable matching parens to be highlighted
