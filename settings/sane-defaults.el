@@ -109,4 +109,31 @@
 ;; flx benefits a lot from gc threshold fine tuning
 (setq gc-cons-threshold 20000000)
 
+;; setup abbreviations
+(require 'abbrev)
+(setq-default abbrev-mode t)
+(define-abbrev-table 'global-abbrev-table
+  '(
+    ("reslt" "result" nil 0)
+    ("requier" "require" nil 0)
+    ))
+
+(defun bk/add-region-local-abbrev (start end)
+  "Go from START to END and add the selected text to a local abbrev."
+  (interactive "r")
+  (if (use-region-p)
+      (let ((num-words (count-words-region start end)))
+        (add-mode-abbrev num-words)
+        (deactivate-mark))
+    (message "No selected region!")))
+
+(defun bk/add-region-global-abbrev (start end)
+  "Go from START to END and add the selected text to global abbrev."
+  (interactive "r")
+  (if (use-region-p)
+      (let ((num-words (count-words-region start end)))
+        (add-abbrev global-abbrev-table "Global" num-words)
+        (deactivate-mark))
+    (message "No selected region!")))
+
 (provide 'sane-defaults)

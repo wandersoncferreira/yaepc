@@ -82,4 +82,8 @@
 ;; org mode
 (global-set-key (kbd "C-c o c") 'org-capture)
 
+;; abbreviate mode
+(global-set-key (kbd "C-x a l") 'bk/add-region-local-abbrev)
+(global-set-key (kbd "C-x a g") 'bk/add-region-global-abbrev)
+
 (provide 'key-bindings)
