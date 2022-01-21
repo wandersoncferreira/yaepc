@@ -36,6 +36,7 @@
      ctrlf
      diff-hl
      diminish
+     elfeed
      exec-path-from-shell
      expand-region
      find-file-in-project
@@ -74,6 +75,7 @@
 (eval-after-load 'magit '(require 'setup-vc))
 (eval-after-load 'smex '(require 'setup-smex))
 (eval-after-load 'org '(require 'setup-org))
+(eval-after-load 'elfeed '(require 'setup-rss))
 
 (require 'setup-encryption)
 (require 'setup-projectile)

@@ -7,6 +7,10 @@
 (global-set-key (kbd "C-x C-m") #'smex)
 (autoload 'smex "smex")
 
+;; elfeed
+(global-set-key (kbd "C-c C-w") 'elfeed)
+(autoload 'elfeed "elfeed")
+
 ;; magit
 (global-set-key (kbd "C-c g s") 'magit-status-fullscreen)
 (autoload 'magit-status-fullscreen "magit")
