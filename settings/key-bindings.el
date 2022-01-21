@@ -49,6 +49,8 @@
 ;; editing
 (global-set-key (kbd "M-i") 'change-inner)
 (global-set-key (kbd "M-o") 'change-outer)
+(global-set-key (kbd "C-c k f") 'zap-up-to-char)
+(global-set-key (kbd "C-c k b") 'bk/zap-to-char-backward)
 
 ;; selection
 (global-set-key (kbd "C-=") 'er/expand-region)
