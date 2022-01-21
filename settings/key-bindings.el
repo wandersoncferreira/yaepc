@@ -35,6 +35,8 @@
 ;; window
 (global-set-key (kbd "C-x 2") 'bk/vsplit-last-buffer)
 (global-set-key (kbd "C-x 3") 'bk/hsplit-last-buffer)
+(global-set-key (kbd "C-x 4 u") 'winner-undo)
+(global-set-key (kbd "C-x 4 U") 'winner-redo)
 
 ;; project
 (global-set-key (kbd "s-t") #'projectile-toggle-between-implementation-and-test)
