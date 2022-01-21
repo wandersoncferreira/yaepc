@@ -79,4 +79,7 @@
 ;; perspective
 (global-set-key (kbd "C-x k") 'persp-kill-buffer*)
 
+;; org mode
+(global-set-key (kbd "C-c o c") 'org-capture)
+
 (provide 'key-bindings)
