@@ -70,12 +70,12 @@
   (exec-path-from-shell-initialize))
 
 ;; setup extensions
-(eval-after-load 'dired '(require 'setup-dired))
-(eval-after-load 'ido '(require 'setup-ido))
-(eval-after-load 'magit '(require 'setup-vc))
-(eval-after-load 'smex '(require 'setup-smex))
-(eval-after-load 'org '(require 'setup-org))
-(eval-after-load 'elfeed '(require 'setup-rss))
+(require 'setup-dired)
+(require 'setup-ido)
+(require 'setup-vc)
+(require 'setup-smex)
+(require 'setup-org)
+(require 'setup-rss)
 
 (require 'setup-encryption)
 (require 'setup-projectile)
