@@ -45,10 +45,11 @@
   (let ((alpha (frame-parameter nil 'alpha)))
     (set-frame-parameter
      nil 'alpha
-     (if (eql (cond ((numberp alpha) alpha)
-                    ((numberp (cdr alpha)) (cdr alpha))
-                    ((numberp (cadr alpha)) (cadr alpha)))
-              100)
+     (if (or (eql (cond ((numberp alpha) alpha)
+                        ((numberp (cdr alpha)) (cdr alpha))
+                        ((numberp (cadr alpha)) (cadr alpha)))
+                  100)
+             (not alpha))
          85
        100))))
 
