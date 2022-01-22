@@ -9,5 +9,6 @@
     ("haev" "have" nil :count 1)
     ("requier" "require" nil :count 0)
     ("reslt" "result" nil :count 0)
+    ("unkown" "unknown" nil :count 2)
    ))
 
