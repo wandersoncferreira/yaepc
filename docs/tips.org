@@ -1,0 +1,17 @@
+#+TITLE: Tips
+
+1. Use =F10= or =M-x menu-bar-open= to interact with the menu bar.
+2. Default Global Magit keys
+   1. =C-x g= (magit-status)
+   2. =C-x M-g= (magit-dispatch)
+   3. =C-c M-g= (magit-file-dispatch) -> I remapped to =C-c g=
+3. Nice file dispatch magit commands
+   1. blame =C-c g b=
+   2. stage the current file =C-c g s=
+   3. commit the current file =C-c g c=
+   4. show the git log for the current file =C-c g l=
+   5. show the diff for the current file =C-c g d=
+4. Delete branch using Magit
+   1. Press =y= to get a listing of all branches and tags in the git repo
+   2. Navigate to the branch you want to delete and press =k=
+  
