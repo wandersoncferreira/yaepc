@@ -33,7 +33,6 @@
      clj-refactor
      clojure-mode
      clojure-mode-extra-font-locking
-     ctrlf
      diff-hl
      diminish
      elfeed
