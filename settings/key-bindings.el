@@ -114,4 +114,6 @@
 (global-set-key (kbd "C-x a l") 'bk/add-region-local-abbrev)
 (global-set-key (kbd "C-x a g") 'bk/add-region-global-abbrev)
 
+;; use space in the minibuffer
+(defalias 'ido-complete-space 'self-insert-command)
 (provide 'key-bindings)
