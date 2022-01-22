@@ -77,6 +77,7 @@
 ;; setup extensions
 (require 'setup-dired)
 (require 'setup-ido)
+(require 'setup-hippie-expand)
 (require 'setup-snippets)
 (require 'setup-vc)
 (require 'setup-smex)
@@ -87,7 +88,6 @@
 (require 'setup-projectile)
 (require 'setup-perspective)
 (require 'setup-paredit)
-(require 'setup-search)
 
 (require 'expand-region)
 (require 'change-inner)
