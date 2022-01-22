@@ -53,6 +53,9 @@
 (global-set-key (kbd "M-p") 'jump-char-backward)
 (global-set-key (kbd "M-n") 'jump-char-forward)
 
+(global-set-key (kbd "M-v") (lambda () (interactive) (scroll-down-command 8)))
+(global-set-key (kbd "C-v") (lambda () (interactive) (scroll-up-command 8)))
+
 ;; editing
 (global-set-key (kbd "M-i") 'change-inner)
 (global-set-key (kbd "M-o") 'change-outer)
