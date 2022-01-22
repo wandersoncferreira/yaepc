@@ -2,6 +2,10 @@
 
 (setq org-directory "~/org"
       org-default-notes-file (concat org-directory "/notes.org")
+      org-fontify-quote-and-verse-blocks t
+      org-fontify-whole-heading-line t
+      org-fontify-emphasized-text t
+      org-fontify-whole-block-delimiter-line t
       org-return-follows-link t
       org-todo-keywords
       '((sequence "TODO(t)"
@@ -14,6 +18,18 @@
       '(("IN-PROGRESS" . "purple")
         ("CANCELED" . org-warning)
         ("CANT-REPRODUCE" . "red")))
+
+(setq org-capture-templates
+      '(("c" "Cisco tasks" entry
+         (file+headline "~/org/tasks.org" "Task list")
+         "\n\n** TODO %? %^g\n   SCHEDULED: %^t\n   :PROPERTIES:\n   :WHOM: cisco\n   :TOPIC: %^{Topic} \n   :END:"
+         :empty-lines 1)
+        ("t" "Regular tasks" entry
+         (file+headline "~/org/tasks.org" "Task list")
+         "\n\n** TODO %? %^g\n   :PROPERTIES:\n   :WHOM: %^{Whom}\n   :TOPIC: %^{Topic}\n   :END:"
+         :empty-lines 1)))
+
+(setq org-agenda-files '("~/org/tasks.org"))
 
 (require 'org-roam)
 (setq org-roam-directory "~/roam-v2")
