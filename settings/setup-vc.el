@@ -35,6 +35,19 @@
   (unless prefix
     (delete-other-windows)))
 
+(defun bk/magit-stage-line-at-point ()
+  "Stage current line at point."
+  (interactive)
+  (let ((init (point))
+        (beg (line-beginning-position))
+        (end (line-end-position)))
+    (save-excursion
+      (set-mark beg)
+      (goto-char end)
+      (activate-mark)
+      (magit-apply-region (magit-current-section) "--cached"))
+    (goto-char init)))
+
 (require 'git-timemachine)
 
 (provide 'setup-vc)

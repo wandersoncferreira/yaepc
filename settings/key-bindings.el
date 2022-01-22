@@ -14,16 +14,22 @@
 (autoload 'elfeed "elfeed")
 
 ;; magit
-(global-set-key (kbd "C-c g s") 'magit-status-fullscreen)
-(autoload 'magit-status-fullscreen "magit")
+(global-set-key (kbd "C-c g") 'magit-file-dispatch)
 
-(global-set-key (kbd "C-c g t") 'git-timemachine)
+;; remove Trace from transient menu
+(transient-insert-suffix 'magit-file-dispatch "B"
+  '("m" "Time Machine" git-timemachine))
 
-(global-set-key (kbd "C-c g g") 'bk/browse-at-remote)
-(global-set-key (kbd "C-c g w") 'bk/copy-permalink-at-point)
+(transient-insert-suffix 'magit-file-dispatch "B"
+  '("w" "Copy Permalink" bk/copy-permalink-at-point))
+
+(transient-insert-suffix 'magit-file-dispatch "t"
+  '("r" "Remote Browse" bk/browse-at-remote))
 
 (eval-after-load "magit"
-  '(define-key magit-status-mode-map (kbd "C-c r") 'magit-ediff-resolve))
+  '(progn
+     (define-key magit-status-mode-map (kbd "C-c r") 'magit-ediff-resolve)
+     (define-key magit-status-mode-map (kbd "C-c s l") 'bk/magit-stage-line-at-point)))
 
 ;; buffer
 (defun bk/eval-buffer ()
