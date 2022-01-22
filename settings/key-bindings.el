@@ -79,7 +79,7 @@
 ;;; shotcurts
 (set-register ?e '(file . "~/.emacs.d/init.el"))
 (set-register ?k '(file . "~/.emacs.d/settings/key-bindings.el"))
-(set-register ?n '(file . "~/org/notes.org"))
+(set-register ?t '(file . "~/org/tasks.org"))
 
 ;; projects
 (eval-after-load "projectile"
@@ -96,6 +96,12 @@
 
 ;; org mode
 (global-set-key (kbd "C-c o c") 'org-capture)
+(global-set-key (kbd "C-c o a") 'org-agenda)
+(global-set-key (kbd "C-c n f") 'org-roam-node-find)
+(global-set-key (kbd "C-c n l") 'org-roam-buffer-toggle)
+(global-set-key (kbd "C-c n i") 'org-roam-node-insert)
+(global-set-key (kbd "C-c n c") 'org-roam-capture)
+(global-set-key (kbd "C-c n j") 'org-roam-dailies-capture-today)
 
 ;; abbreviate mode
 (global-set-key (kbd "C-x a l") 'bk/add-region-local-abbrev)

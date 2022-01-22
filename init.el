@@ -48,6 +48,8 @@
      ido-completing-read+
      ido-vertical-mode
      magit
+     org-roam
+     ox-hugo
      paredit
      perspective
      projectile
