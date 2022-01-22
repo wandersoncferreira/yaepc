@@ -1,6 +1,8 @@
 ;; completion that uses many different methods to find options
 (global-set-key (kbd "C-,") 'completion-at-point)
 
+(global-set-key (kbd "M-/") 'hippie-expand)
+
 ;; another way to hit M-x
 (global-set-key (kbd "M-x") #'smex)
 (global-set-key (kbd "M-X") #'smex-major-mode-commands)
