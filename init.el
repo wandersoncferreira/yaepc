@@ -33,6 +33,7 @@
      clj-refactor
      clojure-mode
      clojure-mode-extra-font-locking
+     clojure-snippets
      diff-hl
      diminish
      elfeed
@@ -50,6 +51,7 @@
      perspective
      projectile
      smex
+     yasnippet
      )))
 
 (condition-case nil

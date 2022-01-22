@@ -17,8 +17,13 @@
   (when (file-directory-p path)
     (add-to-list 'custom-theme-load-path path)))
 
+(defun font-available-p (font-name)
+  (find-font (font-spec :name font-name)))
+
 (load-theme 'default-black t)
-(set-face-attribute 'default nil :font "Monaco 14")
+
+(when (font-available-p "Monaco")
+  (set-face-attribute 'default nil :font "Monaco 14"))
 
 ;; enable matching parens to be highlighted
 (show-paren-mode +1)
