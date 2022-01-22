@@ -1,5 +1,4 @@
 (require 'epa)
-(require 'epa-file)
 (require 'auth-source)
 (require 'org-crypt)
 
@@ -12,7 +11,6 @@
       epa-file-encrypt-to '("wand@hey.com"))
 
 (set 'epg-pinentry-mode nil)
-(epa-file-enable)
 (org-crypt-use-before-save-magic)
 
 (defun bk/bitwarden ()
