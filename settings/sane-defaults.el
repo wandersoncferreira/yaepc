@@ -123,7 +123,7 @@
   (interactive "r")
   (if (use-region-p)
       (let ((num-words (count-words-region start end)))
-        (add-mode-abbrev num-words)
+        (inverse-add-mode-abbrev num-words)
         (deactivate-mark))
     (message "No selected region!")))
 
@@ -132,7 +132,7 @@
   (interactive "r")
   (if (use-region-p)
       (let ((num-words (count-words-region start end)))
-        (add-abbrev global-abbrev-table "Global" num-words)
+        (inverse-add-abbrev global-abbrev-table "Global" num-words)
         (deactivate-mark))
     (message "No selected region!")))
 
