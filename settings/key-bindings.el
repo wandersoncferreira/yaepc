@@ -39,6 +39,7 @@
 
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 (global-set-key (kbd "C-c e b") 'bk/eval-buffer)
+(global-set-key (kbd "C-c C-k") 'bk/eval-buffer)
 
 ;; window
 (global-set-key (kbd "C-x 2") 'bk/vsplit-last-buffer)
