@@ -28,6 +28,9 @@
 ;; enable matching parens to be highlighted
 (show-paren-mode +1)
 
+;; increase left fringe size a bit
+(fringe-mode '(12 . 0))
+
 ;;; clean the modeline
 (require 'diminish)
 (eval-after-load "eldoc" '(diminish 'eldoc-mode))
