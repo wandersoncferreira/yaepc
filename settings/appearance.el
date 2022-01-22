@@ -30,7 +30,7 @@
 (eval-after-load "subword" '(diminish 'subword-mode))
 (eval-after-load "autorevert" '(diminish 'auto-revert-mode))
 (eval-after-load "clj-refactor" '(diminish 'clj-refactor-mode))
-(eval-after-load "cider" '(diminish 'cider-mode))
+(eval-after-load "abbrev" '(diminish 'abbrev-mode))
 
 (defmacro rename-modeline (package-name mode new-name)
   `(eval-after-load ,package-name
