@@ -136,4 +136,24 @@
         (deactivate-mark))
     (message "No selected region!")))
 
+;; minibuffer
+(minibuffer-electric-default-mode)
+
+;; display default argument as [DEFAULT-ARG] instead of (default DEFAULT-ARG)
+(setq minibuffer-eldef-shorten-default t)
+
+;; make script files executable automatically
+;;
+;; verifies if the buffer file has a shebang in it and then changes
+;; the permissions if necessary
+(add-hook 'after-save-hook
+          'executable-make-buffer-file-executable-if-script-p)
+
+;; calendar week start on Monday
+(setq calendar-week-start-day 1)
+
+;; remove the annoying prompt when you try to exit Emacs and there are
+;; sub-processes running
+(setq confirm-kill-processes nil)
+
 (provide 'sane-defaults)
