@@ -32,7 +32,9 @@
   (interactive)
   (cider-find-and-clear-repl-output t))
 
-;;; keybindings
+(require 'clojure-snippets)
+
+;; keybindings
 (define-key cider-repl-mode-map (kbd "C-,") 'complete-symbol)
 (define-key cider-mode-map (kbd "C-,") 'complete-symbol)
 (define-key cider-mode-map (kbd "C-c C-l") 'cider-find-and-clear-repl-buffer)

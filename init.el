@@ -74,6 +74,7 @@
 ;; setup extensions
 (require 'setup-dired)
 (require 'setup-ido)
+(require 'setup-snippets)
 (require 'setup-vc)
 (require 'setup-smex)
 (require 'setup-org)
