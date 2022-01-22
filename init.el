@@ -48,6 +48,7 @@
      ido-completing-read+
      ido-vertical-mode
      magit
+     markdown-mode
      org-roam
      ox-hugo
      paredit
