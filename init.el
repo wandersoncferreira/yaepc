@@ -40,6 +40,7 @@
      exec-path-from-shell
      expand-region
      find-file-in-project
+     fix-word
      flx-ido
      git-timemachine
      jump-char

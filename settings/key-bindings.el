@@ -68,6 +68,9 @@
 (global-set-key (kbd "M-o") 'change-outer)
 (global-set-key (kbd "C-c k f") 'zap-up-to-char)
 (global-set-key (kbd "C-c k b") 'bk/zap-to-char-backward)
+(global-set-key (kbd "M-u") 'fix-word-upcase)
+(global-set-key (kbd "M-l") 'fix-word-downcase)
+(global-set-key (kbd "M-c") 'fix-word-capitalize)
 
 ;; selection
 (global-set-key (kbd "C-=") 'er/expand-region)
