@@ -13,3 +13,8 @@ custom.el
 .mc-lists.el
 url/
 org-roam.db
+.cache/
+.lsp-session-v1
+eclipse.jdt.ls/
+workspace/
+*.sqlite
