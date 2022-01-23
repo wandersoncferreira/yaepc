@@ -44,11 +44,13 @@
      fix-word
      flx-ido
      git-timemachine
-     jump-char
      ido-at-point
      ido-completing-read+
      ido-vertical-mode
      imenu-anywhere
+     jump-char
+     lsp-java
+     lsp-mode
      magit
      markdown-mode
      org-roam
@@ -97,6 +99,7 @@
 
 ;; language specific setup files
 (eval-after-load 'clojure-mode '(require 'setup-clojure-mode))
+(eval-after-load 'cc-mode '(require 'setup-java))
 
 ;; setup files to modes
 (require 'mode-mappings)
