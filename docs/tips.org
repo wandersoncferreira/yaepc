@@ -14,4 +14,7 @@
 4. Delete branch using Magit
    1. Press =y= to get a listing of all branches and tags in the git repo
    2. Navigate to the branch you want to delete and press =k=
-  
+5. Travel back and forward in git history
+   1. =w= copy the hash of the current historic version
+6. While using IDO to switch buffers, you can kill buffers with =C-k=
+7. I should use =bk/ispell-word-then-abbrev= with =C-u= if I want to add the word to local abbrev table
