@@ -22,6 +22,13 @@
   (bk/mark-inside-sexp)
   (kill-region (mark) (point)))
 
+(defun one-shot-keybinding (key command)
+  (set-transient-map
+   (let ((map (make-sparse-keymap)))
+     (define-key map (kbd key) command)
+     map)
+   t))
+
 (defun bk/duplicate-current-line-or-region (arg)
   "Duplicates the current line or region ARG times.
 If there's no region, the current line will be duplicated."
@@ -30,7 +37,7 @@ If there's no region, the current line will be duplicated."
       (let ((beg (region-beginning))
             (end (region-end)))
         (duplicate-region arg beg end)
-        (one-shot-keybinding "d" (λ (duplicate-region 1 beg end))))
+        (one-shot-keybinding "d" (lambda () (duplicate-region 1 beg end))))
     (duplicate-current-line arg)
     (one-shot-keybinding "d" 'duplicate-current-line)))
 
