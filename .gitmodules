@@ -1,3 +1,6 @@
 [submodule "site-lisp/iedit"]
 	path = site-lisp/iedit
 	url = git@github.com:wandersoncferreira/iedit.git
+[submodule "site-lisp/code-review"]
+	path = site-lisp/code-review
+	url = https://github.com/wandersoncferreira/code-review

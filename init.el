@@ -97,6 +97,10 @@
 (require 'change-inner)
 (require 'jump-char)
 
+(defun bk/activate--code-review ()
+  (interactive)
+  (require 'code-review))
+
 ;; language specific setup files
 (eval-after-load 'clojure-mode '(require 'setup-clojure-mode))
 (eval-after-load 'cc-mode '(require 'setup-java))
