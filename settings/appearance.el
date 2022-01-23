@@ -46,6 +46,7 @@
 (eval-after-load "yasnippet" '(diminish 'yas-minor-mode))
 (eval-after-load "abbrev" '(diminish 'abbrev-mode))
 (eval-after-load "whitespace" '(diminish 'whitespace-mode))
+(eval-after-load "flyspell" '(diminish 'flyspell-mode))
 
 (defmacro rename-modeline (package-name mode new-name)
   `(eval-after-load ,package-name
