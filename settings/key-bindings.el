@@ -1,6 +1,9 @@
 ;; completion that uses many different methods to find options
 (global-set-key (kbd "C-,") 'completion-at-point)
 
+;; imenu anywhere
+(global-set-key (kbd "C-.") 'imenu-anywhere)
+
 (global-set-key (kbd "M-/") 'hippie-expand)
 
 ;; another way to hit M-x

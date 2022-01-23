@@ -47,6 +47,7 @@
      ido-at-point
      ido-completing-read+
      ido-vertical-mode
+     imenu-anywhere
      magit
      markdown-mode
      org-roam
