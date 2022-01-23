@@ -20,10 +20,15 @@
 (defun font-available-p (font-name)
   (find-font (font-spec :name font-name)))
 
-(load-theme 'default-black t)
+(defun bk/set-monaco-font (size)
+  (when (font-available-p "Monaco")
+    (set-face-attribute 'default nil :font (format "Monaco %s" size))))
 
-(when (font-available-p "Monaco")
-  (set-face-attribute 'default nil :font "Monaco 14"))
+(defun bk/dark-background ()
+  (interactive)
+  (load-theme 'default-black t))
+
+(bk/dark-background)
 
 ;; enable matching parens to be highlighted
 (show-paren-mode +1)
