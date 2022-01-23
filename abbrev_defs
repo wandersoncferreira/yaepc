@@ -6,6 +6,7 @@
 
 (define-abbrev-table 'global-abbrev-table
   '(
+    ("didnt" "didn't" nil :count 1)
     ("haev" "have" nil :count 1)
     ("requier" "require" nil :count 0)
     ("reslt" "result" nil :count 0)
