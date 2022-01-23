@@ -119,4 +119,8 @@
 
 ;; use space in the minibuffer
 (defalias 'ido-complete-space 'self-insert-command)
+
+;; spell + abbrev
+(global-set-key (kbd "C-x C-i") 'bk/ispell-word-then-abbrev)
+
 (provide 'key-bindings)

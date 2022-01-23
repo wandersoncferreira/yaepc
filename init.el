@@ -84,7 +84,7 @@
 (require 'setup-smex)
 (require 'setup-org)
 (require 'setup-rss)
-
+(require 'setup-spell)
 (require 'setup-encryption)
 (require 'setup-projectile)
 (require 'setup-perspective)
