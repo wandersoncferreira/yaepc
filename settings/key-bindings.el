@@ -50,6 +50,8 @@
 (global-set-key (kbd "C-x 4 u") 'winner-undo)
 (global-set-key (kbd "C-x 4 U") 'winner-redo)
 
+(global-set-key (kbd "C-c w t") #'bk/toggle-transparency)
+
 ;; project
 (global-set-key (kbd "s-t") #'projectile-toggle-between-implementation-and-test)
 
