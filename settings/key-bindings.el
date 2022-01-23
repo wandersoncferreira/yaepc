@@ -123,4 +123,8 @@
 ;; spell + abbrev
 (global-set-key (kbd "C-x C-i") 'bk/ispell-word-then-abbrev)
 
+;; easy kill
+(global-set-key [remap kill-ring-save] #'easy-kill)
+(global-set-key [remap mark-sexp] #'easy-mark)
+
 (provide 'key-bindings)

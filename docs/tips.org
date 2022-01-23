@@ -18,3 +18,15 @@
    1. =w= copy the hash of the current historic version
 6. While using IDO to switch buffers, you can kill buffers with =C-k=
 7. I should use =bk/ispell-word-then-abbrev= with =C-u= if I want to add the word to local abbrev table
+8. Easy kill cheatsheet
+   | keybinding | description                         |
+   |------------+-------------------------------------|
+   | M-w w      | save word at point                  |
+   | M-w s      | save sexp at point                  |
+   | M-w l      | save list at point (enclosing sexp) |
+   | M-w d      | save defun at point                 |
+   | M-w D      | save current defun's name           |
+   | M-w f      | save filename at point              |
+   | M-w b      | save =buffer-file-name=             |
+   - see more at https://emacsredux.com/blog/2018/11/09/an-easy-kill/
+9.

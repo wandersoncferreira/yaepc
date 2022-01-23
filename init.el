@@ -37,6 +37,7 @@
      diff-hl
      diminish
      elfeed
+     easy-kill
      exec-path-from-shell
      expand-region
      find-file-in-project
