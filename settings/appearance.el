@@ -40,6 +40,7 @@
 (eval-after-load "clj-refactor" '(diminish 'clj-refactor-mode))
 (eval-after-load "yasnippet" '(diminish 'yas-minor-mode))
 (eval-after-load "abbrev" '(diminish 'abbrev-mode))
+(eval-after-load "whitespace" '(diminish 'whitespace-mode))
 
 (defmacro rename-modeline (package-name mode new-name)
   `(eval-after-load ,package-name
@@ -61,5 +62,14 @@
              (not alpha))
          85
        100))))
+
+;; whitespace
+(require 'whitespace)
+(add-hook 'prog-mode-hook 'whitespace-mode)
+(add-hook 'before-save-hook 'whitespace-cleanup)
+
+(setq whitespace-line-column 80
+      whitespace-style
+      '(face tabs empty trailing lines-tail))
 
 (provide 'appearance)
