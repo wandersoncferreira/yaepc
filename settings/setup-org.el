@@ -81,4 +81,9 @@
 
 (advice-add 'org-hugo-link :around #'bk/handle-org-roam-link-as-bold)
 
+;; enable Easy Templates
+(require 'org-tempo)
+
+(add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
+
 (provide 'setup-org)
