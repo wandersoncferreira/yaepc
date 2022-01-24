@@ -105,6 +105,7 @@
 ;; language specific setup files
 (eval-after-load 'clojure-mode '(require 'setup-clojure-mode))
 (eval-after-load 'cc-mode '(require 'setup-java))
+(eval-after-load 'eshell '(require 'setup-eshell))
 
 ;; setup files to modes
 (require 'mode-mappings)

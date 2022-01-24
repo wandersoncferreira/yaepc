@@ -133,4 +133,10 @@
 (global-set-key [remap kill-ring-save] #'easy-kill)
 (global-set-key [remap mark-sexp] #'easy-mark)
 
+;; eshell
+(eval-after-load "eshell"
+  '(add-hook 'eshell-mode-hook
+             (lambda ()
+               (local-set-key (kbd "C-l") 'eshell-clear-buffer))))
+
 (provide 'key-bindings)
