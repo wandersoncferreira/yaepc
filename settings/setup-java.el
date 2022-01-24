@@ -12,6 +12,9 @@
        "-XX:+UseStringDeduplication"
        "-javaagent:/Users/wferreir/code/dotfiles/lombok-1.18.22.jar"))
 
+;; optimization recommended by LSP maintainers
+(setq read-process-output-max (* 1024 1024))
+
 (defun bk/java-mode-hook ()
   (auto-fill-mode)
   (subword-mode)
