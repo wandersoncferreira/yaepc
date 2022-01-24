@@ -37,8 +37,11 @@
 
 ;; keybindings
 (define-key cider-repl-mode-map (kbd "C-,") 'complete-symbol)
+(define-key cider-repl-mode-map (kbd "C-l") 'cider-find-and-clear-repl-buffer)
+
 (define-key cider-mode-map (kbd "C-,") 'complete-symbol)
 (define-key cider-mode-map (kbd "C-c C-l") 'cider-find-and-clear-repl-buffer)
+(define-key cider-mode-map (kbd "C-c r s") #'bk/clojure--reset)
 
 (define-key clojure-mode-map (kbd "M-s f") 'sf/focus-at-point)
 (define-key clojure-mode-map [remap paredit-forward] 'clojure-forward-logical-sexp)
