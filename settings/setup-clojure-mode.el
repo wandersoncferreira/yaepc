@@ -22,7 +22,8 @@
 
 ;;; enable clojure
 (defun bk/enable-clojure-extensions ()
-  (clj-refactor-mode 1))
+  (clj-refactor-mode 1)
+  (aggressive-indent-mode 1))
 
 (add-hook 'clojure-mode-hook 'bk/enable-clojure-extensions)
 

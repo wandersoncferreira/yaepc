@@ -27,7 +27,8 @@
 
 (defun init--install-packages ()
   (packages-install
-   '(browse-at-remote
+   '(aggressive-indent
+     browse-at-remote
      change-inner
      cider
      clj-refactor
