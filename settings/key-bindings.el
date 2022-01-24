@@ -76,6 +76,9 @@
 (global-set-key (kbd "C-c k b") #'bk/zap-to-char-backward)
 (global-set-key (kbd "C-c d") #'bk/duplicate-current-line-or-region)
 
+(global-set-key (kbd "C-c r p") #'bk/point-to-register)
+(global-set-key (kbd "C-c r j") #'bk/jump-to-register)
+
 (global-set-key (kbd "M-u") #'fix-word-upcase)
 (global-set-key (kbd "M-l") #'fix-word-downcase)
 (global-set-key (kbd "M-c") #'fix-word-capitalize)

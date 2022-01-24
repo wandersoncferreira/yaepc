@@ -73,3 +73,16 @@ region-end is used."
         (newline)
         (forward-char -1))
       (duplicate-region num (point-at-bol) (1+ (point-at-eol))))))
+
+(defun bk/point-to-register ()
+  "Store cursor position in a register."
+  (interactive)
+  (point-to-register 8)
+  (message "Point set"))
+
+(defun bk/jump-to-register ()
+  "Switch between current pos and stored pos."
+  (interactive)
+  (let ((tmp (point-marker)))
+    (jump-to-register 8)
+    (set-register 8 tmp)))
