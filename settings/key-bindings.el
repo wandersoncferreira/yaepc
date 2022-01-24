@@ -92,6 +92,7 @@
 (set-register ?e '(file . "~/.emacs.d/init.el"))
 (set-register ?k '(file . "~/.emacs.d/settings/key-bindings.el"))
 (set-register ?t '(file . "~/org/tasks.org"))
+(set-register ?h '(file . "~/.emacs.d/docs/tips.org"))
 
 ;; projects
 (eval-after-load "projectile"
