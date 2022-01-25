@@ -18,3 +18,4 @@ org-roam.db
 eclipse.jdt.ls/
 workspace/
 *.sqlite
+.org-id-locations
