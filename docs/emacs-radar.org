@@ -6,7 +6,8 @@
   - i never relied much in snippets, perhaps I should make yet another attempt
 - [ ] find-file-in-project
   - how this can help me work better with Clojure files?
-- [ ] undo tree
+- [X] undo tree
+  - [25-01-2022] still mixed feelings about using it
 - [ ] crux
 - [ ] super-save
 - [ ] flyspell
@@ -15,4 +16,7 @@
 - [ ] move-text
 - [ ] easy-kill
 - [ ] avy
-- [ ] aggressive-indent
+- [X] aggressive-indent
+  - [25-01-2022] still mixed feelings about using it
+- [ ] auto-yasnippet
+- [ ] bookmarks
