@@ -170,4 +170,8 @@
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 
+;; enable undo-tree
+(require 'undo-tree)
+(global-undo-tree-mode +1)
+
 (provide 'sane-defaults)

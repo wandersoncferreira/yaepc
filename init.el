@@ -60,6 +60,7 @@
      perspective
      projectile
      smex
+     undo-tree
      yasnippet
      )))
 
