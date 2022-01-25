@@ -86,3 +86,9 @@ region-end is used."
   (let ((tmp (point-marker)))
     (jump-to-register 8)
     (set-register 8 tmp)))
+
+(defun bk/indent-defun-at-point ()
+  (interactive)
+  (save-excursion
+    (mark-defun)
+    (call-interactively #'indent-region)))

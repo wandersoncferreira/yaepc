@@ -88,6 +88,8 @@
 (global-set-key (kbd "C-M-=") #'bk/mark-inside-sexp)
 (global-set-key (kbd "C-M--") #'bk/kill-inside-sexp)
 
+(global-set-key (kbd "C-M-]") #'bk/indent-defun-at-point)
+
 
 ;; selection
 (global-set-key (kbd "C-=") #'er/expand-region)
