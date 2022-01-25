@@ -15,10 +15,7 @@
 
 (defun bk/clojure--reset ()
   (interactive)
-  (cider-nrepl-request:eval
-   "(reset)"
-   (lambda (&rest res))
-   "user"))
+  (cider-interactive-eval "(reset)"))
 
 ;;; enable clojure
 (defun bk/enable-clojure-extensions ()
