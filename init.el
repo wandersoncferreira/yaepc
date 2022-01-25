@@ -1,9 +1,5 @@
 ;;; Here be dragons!
 
-(defvar file-name-handler-alist-old file-name-handler-alist)
-
-(setq file-name-handler-alist nil)
-
 ;; Set path to dependencies
 (setq site-lisp-dir
       (expand-file-name "site-lisp" user-emacs-directory))
