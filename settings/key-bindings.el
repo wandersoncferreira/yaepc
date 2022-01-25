@@ -147,11 +147,10 @@
                (local-set-key (kbd "C-l") 'eshell-clear-buffer))))
 
 ;; snippets
-(eval-after-load 'yasnippet
+(eval-after-load "yasnippet"
   '(progn
      (define-key yas-minor-mode-map (kbd "C-c y x") 'yas-expand)
-     (define-key yas-minor-mode-map (kbd "C-c y h") 'yas-describe-tables)
-     (define-key yas-minor-mode-map (kbd "C-c y h") 'yas-visit-snippet-file)))
+     (define-key yas-minor-mode-map (kbd "C-c y h") 'yas-describe-tables)))
 
 
 
