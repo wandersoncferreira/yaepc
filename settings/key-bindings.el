@@ -93,6 +93,9 @@
 (global-set-key (kbd "C-=") #'er/expand-region)
 (global-set-key (kbd "C-x C-b") #'ido-switch-buffer-other-window)
 
+(when (fboundp 'isearch-occur)
+  (define-key isearch-mode-map (kbd "C-c C-o") #'isearch-occur))
+
 ;;; shotcurts
 (set-register ?e '(file . "~/.emacs.d/init.el"))
 (set-register ?k '(file . "~/.emacs.d/settings/key-bindings.el"))
