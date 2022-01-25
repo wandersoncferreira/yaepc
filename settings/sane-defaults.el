@@ -10,6 +10,9 @@
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 
+;; disable view tall lines <-> what does that even mean? but improves perf
+(setq auto-window-vscroll nil)
+
 ;; Don't write lock-files, I'm the only one here
 (setq create-lockfiles nil)
 
@@ -113,7 +116,8 @@
 (add-hook 'emacs-startup-hook
           (lambda ()
             (setq gc-cons-threshold (* 20 1024 1024)
-                  gc-cons-percentage 0.1)))
+                  gc-cons-percentage 0.1
+                  file-name-handler-alist file-name-handler-alist-old)))
 
 ;; setup abbreviations
 (require 'abbrev)
