@@ -62,6 +62,7 @@
      smex
      undo-tree
      yasnippet
+     yasnippet-snippets
      )))
 
 (condition-case nil
