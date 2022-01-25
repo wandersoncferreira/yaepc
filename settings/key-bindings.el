@@ -32,7 +32,9 @@
 (eval-after-load "magit"
   '(progn
      (define-key magit-status-mode-map (kbd "C-c r") #'magit-ediff-resolve)
-     (define-key magit-status-mode-map (kbd "C-c s l") #'bk/magit-stage-line-at-point)))
+     (define-key magit-status-mode-map (kbd "C-c s l") #'bk/magit-stage-line-at-point)
+     (define-key magit-status-mode-map (kbd "C-M-<up>") #'magit-section-backward-sibling)
+     (define-key magit-status-mode-map (kbd "C-M-<down>") #'magit-section-forward-sibling)))
 
 ;; buffer
 (defun bk/eval-buffer ()
