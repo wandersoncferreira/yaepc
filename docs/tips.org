@@ -29,3 +29,5 @@
    | M-w f      | save filename at point              |
    | M-w b      | save =buffer-file-name=             |
    - see more at https://emacsredux.com/blog/2018/11/09/an-easy-kill/
+9. [ORG] Make a heading a new Roam node
+   1. use =M-x org-id-get-create=
