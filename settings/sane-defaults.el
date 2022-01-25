@@ -106,8 +106,10 @@
   (other-window 1 nil)
   (switch-to-next-buffer))
 
-;; flx benefits a lot from gc threshold fine tuning
-(setq gc-cons-threshold 20000000)
+;; adjust gc after startup
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (setq gc-cons-threshold (* 20 1024 1024))))
 
 ;; setup abbreviations
 (require 'abbrev)
