@@ -161,4 +161,13 @@
 ;; sub-processes running
 (setq confirm-kill-processes nil)
 
+;; please don't disable narrowing commands, I like them
+(put 'narrow-to-region 'disabled nil)
+(put 'narrow-to-page 'disabled nil)
+(put 'narrow-to-defun 'disabled nil)
+
+;; don't disable case-change functions either
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+
 (provide 'sane-defaults)
