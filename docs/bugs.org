@@ -1,0 +1,4 @@
+#+TITLE: Bugs
+
+- Perspective is not compatible with =ido-use-virtual-buffers=
+  - [[https://github.com/nex3/perspective-el/issues/10][issue link]]
