@@ -5,8 +5,7 @@
         "https://emilkirkegaard.dk/en/feed"
         "https://desmondrivet.com/feeds/blog.rss"
         "https://xkcd.com/atom.xml"
-        "https://emacsredux.com/atom.xml"
-        ("https://portswigger.net/daily-swig/rss" . "security")))
+        "https://emacsredux.com/atom.xml"))
 
 (set-face-attribute 'elfeed-search-title-face nil :foreground "dim gray")
 (set-face-attribute 'elfeed-search-unread-title-face nil :foreground "powder blue")
