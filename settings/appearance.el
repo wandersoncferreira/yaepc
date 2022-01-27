@@ -47,7 +47,8 @@
 (eval-after-load "abbrev" '(diminish 'abbrev-mode))
 (eval-after-load "whitespace" '(diminish 'whitespace-mode))
 (eval-after-load "flyspell" '(diminish 'flyspell-mode))
-(eval-after-load "undo-tree" '(diminish 'undo-tree-mode))
+(eval-after-load "projectile" '(diminish 'projectile-mode))
+
 
 (defmacro rename-modeline (package-name mode new-name)
   `(eval-after-load ,package-name
