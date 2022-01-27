@@ -3,22 +3,30 @@
 - [ ] git-messenger
   - displays the git commit message of the current line
 - [x] yasnippet
-  - i never relied much in snippets, perhaps I should make yet another attempt
-- [ ] find-file-in-project
-  - how this can help me work better with Clojure files?
+  - <2022-01-21 Fri> i never relied much in snippets, perhaps I should make yet another attempt
+- [X] find-file-in-project
+  - <2022-01-19 Wed> how this can help me work better with Clojure files?
+  - <2022-01-26 Wed> I created shortcuts to access specific portions of the codebase I work with...
+  - <2022-01-26 Wed> I've been loving it and using everyday
 - [X] undo tree
-  - [25-01-2022] still mixed feelings about using it
-  - disabled
-- [ ] crux
+  - <2022-01-24 Mon> still mixed feelings about using it
+  - <2022-01-26 Wed> disabled
+- [X] crux
+  - <2022-01-26 Wed> not going to use.
+  - <2022-01-26 Wed> if I feel the need for one function there I might steal it and paste here
 - [ ] super-save
 - [ ] flyspell
+  - <2022-01-26 Wed> not enabled by default and I really like it, but
+    when I profile my emacs session with flyspell enabled he is often
+    the most resource hunger process. :(
 - [ ] hl-todo
 - [ ] inf-clojure
 - [ ] move-text
-- [ ] easy-kill
+- [x] easy-kill
+  - <2022-01-26 Wed> to be honest I need to force myself to use it more often
 - [ ] avy
 - [X] aggressive-indent
-  - [25-01-2022] still mixed feelings about using it
-  - disabled
+  - <2022-01-24 Mon> still mixed feelings about using it
+  - <2022-01-26 Wed> disabled
 - [ ] auto-yasnippet
 - [ ] bookmarks
