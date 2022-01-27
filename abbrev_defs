@@ -6,7 +6,7 @@
 
 (define-abbrev-table 'global-abbrev-table
   '(
-    ("clojure" "clojure" nil :count 5)
+    ("clojure" "clojure" nil :count 7)
     ("conrtol" "control" nil :count 0)
     ("didnt" "didn't" nil :count 1)
     ("dont" "don't" nil :count 4)
@@ -14,6 +14,7 @@
     ("haev" "have" nil :count 1)
     ("java" "java" nil :count 0)
     ("poit" "point" nil :count 0)
+    ("relly" "really" nil :count 0)
     ("requier" "require" nil :count 0)
     ("reslt" "result" nil :count 0)
     ("suport" "support" nil :count 0)
