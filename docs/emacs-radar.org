@@ -8,6 +8,7 @@
   - how this can help me work better with Clojure files?
 - [X] undo tree
   - [25-01-2022] still mixed feelings about using it
+  - disabled
 - [ ] crux
 - [ ] super-save
 - [ ] flyspell
@@ -18,5 +19,6 @@
 - [ ] avy
 - [X] aggressive-indent
   - [25-01-2022] still mixed feelings about using it
+  - disabled
 - [ ] auto-yasnippet
 - [ ] bookmarks
