@@ -1,5 +1,8 @@
 (require 'ido)
 
+;; use dot in the IDO candidate list to goto dired
+(setq ido-show-dot-for-dired t)
+
 ;; disable merged work directories... I don't understand why this is useful if
 ;; no matches are found in the current directory, IDO tries to match my input in
 ;; another project
