@@ -1,18 +1,18 @@
 (require 'ido)
-(ido-mode t)
 
 ;; disable merged work directories... I don't understand why this is useful if
 ;; no matches are found in the current directory, IDO tries to match my input in
 ;; another project
 (setq ido-auto-merge-work-directories-length -1)
 
-;; enable recentf integration
-(setq ido-use-virtual-buffers t)
-
 ;; enable flexible string matching.  Flexible matching means that if
 ;; the entered string does not match any item, any item containing the
 ;; entered characters in the given sequence will match.
 (setq ido-enable-flex-matching t)
+
+;; don't prompt me if a new buffer needs to be created if no buffer
+;; matches substring
+(setq ido-create-new-buffer 'always)
 
 ;; Do not confirm unique completions
 (setq ido-confirm-unique-completion nil)
@@ -21,12 +21,6 @@
 ;; full-matches > suffix-matches > prefix matches > remaining matches
 ;; this can get in the way for buffer switching
 (setq ido-buffer-disable-smart-matches nil)
-
-;; how to visit a new buffer
-(setq ido-default-buffer-method 'selected-window)
-
-;; how to visit a new file
-(setq ido-default-file-method 'selected-window)
 
 ;; change the collection size above which flx will revert to flex matching
 (setq flx-ido-threshold 2000)
@@ -55,5 +49,18 @@
 
 (require 'ido-completing-read+)
 (ido-ubiquitous-mode 1)
+
+;; create a few shortcuts
+(add-hook 'ido-setup-hook
+          (lambda ()
+            ;; go to home
+            (define-key ido-file-completion-map (kbd "~")
+              (lambda ()
+                (interactive)
+                (if (looking-back "~/")
+                    (insert "code/")
+                  (if (looking-back "/")
+                      (insert "~/")
+                    (call-interactively 'self-insert-command)))))))
 
 (provide 'setup-ido)
