@@ -27,8 +27,7 @@
 
 (defun init--install-packages ()
   (packages-install
-   '(aggressive-indent
-     browse-at-remote
+   '(browse-at-remote
      change-inner
      cider
      clj-refactor
@@ -59,8 +58,8 @@
      paredit
      perspective
      projectile
+     shrink-whitespace
      smex
-     undo-tree
      yasnippet
      yasnippet-snippets
      )))

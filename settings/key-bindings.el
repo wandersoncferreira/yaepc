@@ -71,6 +71,9 @@
 (global-set-key (kbd "C-v") (lambda () (interactive) (scroll-up-command 8)))
 
 ;; editing
+
+(global-set-key (kbd "C-c k w") #'shrink-whitespace)
+
 (global-set-key (kbd "M-i") #'change-inner)
 (global-set-key (kbd "M-o") #'change-outer)
 
@@ -141,6 +144,8 @@
 (global-set-key [remap mark-sexp] #'easy-mark)
 
 ;; eshell
+(global-set-key (kbd "C-c e s") #'eshell)
+
 (eval-after-load "eshell"
   '(add-hook 'eshell-mode-hook
              (lambda ()
