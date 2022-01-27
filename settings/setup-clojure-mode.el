@@ -31,6 +31,26 @@
 
 (require 'clojure-snippets)
 
+(defun bk/cider--unalias-after-error ()
+  (interactive)
+  (let ((alias))
+    (with-current-buffer (get-buffer "*cider-error*")
+      (save-excursion
+        (goto-char (point-min))
+        (while (not (eobp))
+          (let ((line-at-point (buffer-substring-no-properties
+                                (line-beginning-position)
+                                (line-end-position))))
+            (when (string-match
+                   "Alias \\(\\w+\\) already exists in namespace"
+                   line-at-point)
+              (setq alias (match-string 1 line-at-point))))
+          (forward-line))))
+    (cider-repl-set-ns (cider-current-ns))
+    (cider-interactive-eval
+     (format "(ns-unalias *ns* '%s)" alias))
+    (cider-repl-set-ns "user")))
+
 ;; keybindings
 (define-key cider-repl-mode-map (kbd "C-,") 'complete-symbol)
 (define-key cider-repl-mode-map (kbd "C-l") 'cider-find-and-clear-repl-buffer)
