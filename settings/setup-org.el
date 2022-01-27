@@ -86,4 +86,17 @@
 
 (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
 
+;; add Clojure support for org blocks
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (clojure . t)))
+
+;; don't ask before evaluating code blocks
+(setq org-confirm-babel-evaluate nil)
+
+(require 'ob-clojure)
+
+(setq org-babel-clojure-backend 'cider)
+
 (provide 'setup-org)
