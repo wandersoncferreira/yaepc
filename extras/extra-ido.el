@@ -68,4 +68,7 @@
                       (insert "~/")
                     (call-interactively 'self-insert-command)))))))
 
+;; Ignore .DS_Store files with ido
+(add-to-list 'ido-ignore-files "\\.DS_Store")
+
 (provide 'extra-ido)

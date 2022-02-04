@@ -6,8 +6,7 @@
       (append projectile-globally-ignored-directories
               '(".clj-kondo"
                 ".local"
-                ".cpcache"
-                "site-lisp"))
+                ".cpcache"))
       projectile-project-search-path '("~/code")
       projectile-indexing-method 'alien
       projectile-enable-caching nil

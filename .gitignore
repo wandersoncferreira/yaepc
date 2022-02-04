@@ -21,3 +21,4 @@ workspace/
 .org-id-locations
 .dap-breakpoints
 code-review-error.log
+site-lisp/
