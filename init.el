@@ -11,12 +11,6 @@
 (add-to-list 'load-path bartuka-dir)
 (add-to-list 'load-path site-lisp-dir)
 
-
-;; Add external projects to load path
-(dolist (project (directory-files site-lisp-dir t "\\w+"))
-  (when (file-directory-p project)
-    (add-to-list 'load-path project)))
-
 (require 'bartuka-packages)
 
 ;; Are we on a mac?
