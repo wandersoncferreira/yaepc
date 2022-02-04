@@ -29,4 +29,4 @@
 
 (define-key lsp-mode-map (kbd "M-RET") #'lsp-execute-code-action)
 
-(provide 'bartuka-java)
+(provide 'extra-java)

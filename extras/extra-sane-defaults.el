@@ -188,4 +188,4 @@
   (require 'exec-path-from-shell)
   (exec-path-from-shell-initialize))
 
-(provide 'bartuka-sane-defaults)
+(provide 'extra-sane-defaults)

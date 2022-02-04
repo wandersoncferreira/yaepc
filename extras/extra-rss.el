@@ -11,4 +11,4 @@
 (set-face-attribute 'elfeed-search-unread-title-face nil :foreground "powder blue")
 
 
-(provide 'bartuka-rss)
+(provide 'extra-rss)

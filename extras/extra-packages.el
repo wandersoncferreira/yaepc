@@ -18,4 +18,4 @@
   (when (file-directory-p project)
     (add-to-list 'load-path project)))
 
-(provide 'bartuka-packages)
+(provide 'extra-packages)

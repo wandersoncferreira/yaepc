@@ -5,4 +5,4 @@
 ;; no dropdowns
 (setq yas-prompt-functions '(yas-ido-prompt yas-completing-read))
 
-(provide 'bartuka-snippets)
+(provide 'extra-snippets)

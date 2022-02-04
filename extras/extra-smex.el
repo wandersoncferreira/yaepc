@@ -3,4 +3,4 @@
 (setq smex-history-length 10
       smex-prompt-string "Fire: ")
 
-(provide 'bartuka-smex)
+(provide 'extra-smex)

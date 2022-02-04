@@ -108,4 +108,4 @@
 (eval-after-load "elisp-mode"
   '(add-hook 'emacs-lisp-mode-hook #'highlight-todos))
 
-(provide 'bartuka-appearance)
+(provide 'extra-appearance)

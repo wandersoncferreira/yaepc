@@ -39,4 +39,4 @@ abort completely with `C-g'."
 (require 'flyspell)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
-(provide 'bartuka-spell)
+(provide 'extra-spell)

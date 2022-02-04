@@ -16,4 +16,4 @@
         try-complete-file-name-partially
         try-complete-file-name))
 
-(provide 'bartuka-hippie-expand)
+(provide 'extra-hippie-expand)

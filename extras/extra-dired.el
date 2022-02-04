@@ -12,4 +12,4 @@
   (setq insert-directory-program
         (executable-find "gls")))
 
-(provide 'bartuka-dired)
+(provide 'extra-dired)

@@ -99,4 +99,4 @@
 
 (setq org-babel-clojure-backend 'cider)
 
-(provide 'bartuka-org)
+(provide 'extra-org)

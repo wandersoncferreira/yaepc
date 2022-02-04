@@ -70,4 +70,4 @@
 (paredit-annotate-mode-with-examples)
 (paredit-annotate-functions-with-examples)
 
-(provide 'bartuka-paredit)
+(provide 'extra-paredit)

@@ -19,4 +19,4 @@
              :host "bitwarden.app"
              :user "bartuka")))
 
-(provide 'bartuka-encryption)
+(provide 'extra-encryption)

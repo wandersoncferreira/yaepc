@@ -86,4 +86,4 @@
           (lambda ()
             (persp-add-buffer (current-buffer))))
 
-(provide 'bartuka-clojure-mode)
+(provide 'extra-clojure-mode)

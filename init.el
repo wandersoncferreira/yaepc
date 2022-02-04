@@ -4,14 +4,14 @@
 (setq site-lisp-dir
       (expand-file-name "site-lisp" user-emacs-directory))
 
-(setq bartuka-dir
+(setq extra-dir
       (expand-file-name "bartuka" user-emacs-directory))
 
 ;; Set up load path
-(add-to-list 'load-path bartuka-dir)
+(add-to-list 'load-path extra-dir)
 (add-to-list 'load-path site-lisp-dir)
 
-(require 'bartuka-packages)
+(require 'extra-packages)
 
 ;; Are we on a mac?
 (setq is-mac (equal system-type 'darwin))
@@ -61,27 +61,27 @@
    (package-refresh-contents)
    (init--install-packages)))
 
-(dolist (file '(bartuka-appearance
-                bartuka-sane-defaults
-                bartuka-dired
-                bartuka-ido
-                bartuka-hippie-expand
-                bartuka-snippets
-                bartuka-vc
-                bartuka-smex
-                bartuka-org
-                bartuka-rss
-                bartuka-spell
-                bartuka-encryption
-                bartuka-projectile
-                bartuka-perspective
-                bartuka-paredit
-                bartuka-buffer
-                bartuka-mode-mappings
-                bartuka-key-bindings
-                bartuka-clojure-mode
-                bartuka-java
-                bartuka-eshell))
+(dolist (file '(extra-appearance
+                extra-sane-defaults
+                extra-dired
+                extra-ido
+                extra-hippie-expand
+                extra-snippets
+                extra-vc
+                extra-smex
+                extra-org
+                extra-rss
+                extra-spell
+                extra-encryption
+                extra-projectile
+                extra-perspective
+                extra-paredit
+                extra-buffer
+                extra-mode-mappings
+                extra-key-bindings
+                extra-clojure-mode
+                extra-java
+                extra-eshell))
   (require file))
 
 (defun bk/activate--code-review ()

@@ -13,4 +13,4 @@
     (erase-buffer)
     (eshell-send-input)))
 
-(provide 'bartuka-eshell)
+(provide 'extra-eshell)

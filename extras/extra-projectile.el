@@ -6,11 +6,14 @@
       (append projectile-globally-ignored-directories
               '(".clj-kondo"
                 ".local"
-                ".cpcache"))
+                ".cpcache"
+                "site-lisp"))
       projectile-project-search-path '("~/code")
       projectile-indexing-method 'alien
       projectile-enable-caching nil
       projectile-completion-system 'ido
       projectile-mode-line-prefix " P")
 
-(provide 'bartuka-projectile)
+(require 'wgrep)
+
+(provide 'extra-projectile)

@@ -56,7 +56,7 @@
 (ido-ubiquitous-mode 1)
 
 ;; create a few shortcuts
-(add-hook 'ido-bartuka-hook
+(add-hook 'ido-extra-hook
           (lambda ()
             ;; go to home
             (define-key ido-file-completion-map (kbd "~")
@@ -68,4 +68,4 @@
                       (insert "~/")
                     (call-interactively 'self-insert-command)))))))
 
-(provide 'bartuka-ido)
+(provide 'extra-ido)

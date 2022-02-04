@@ -164,4 +164,4 @@
      (define-key yas-minor-mode-map (kbd "C-c y x") 'yas-expand)
      (define-key yas-minor-mode-map (kbd "C-c y h") 'yas-describe-tables)))
 
-(provide 'bartuka-key-bindings)
+(provide 'extra-key-bindings)
