@@ -5,7 +5,7 @@
       (expand-file-name "site-lisp" user-emacs-directory))
 
 (setq extra-dir
-      (expand-file-name "bartuka" user-emacs-directory))
+      (expand-file-name "extras" user-emacs-directory))
 
 ;; Set up load path
 (add-to-list 'load-path extra-dir)
@@ -91,7 +91,7 @@
 ;; setup work specific files
 (add-hook 'after-init-hook
           (lambda ()
-            (load-file "~/.emacs.d/bartuka/work-cisco.el.gpg")
+            (load-file (expand-file-name "work-cisco.el.gpg" extra-dir))
             (require 'work-cisco)))
 
 ;; Functions (load all files in defuns-dir)
