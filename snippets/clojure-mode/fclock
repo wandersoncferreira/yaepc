@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: fclock
+# key: fclock
+# --
+(jt/fixed-clock (jt/instant "2017-02-15T14:14:10.000Z") (jt/zone-id "UTC"))

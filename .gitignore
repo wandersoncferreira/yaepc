@@ -19,3 +19,5 @@ eclipse.jdt.ls/
 workspace/
 *.sqlite
 .org-id-locations
+.dap-breakpoints
+code-review-error.log

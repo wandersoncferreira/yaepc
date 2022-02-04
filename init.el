@@ -4,14 +4,14 @@
 (setq site-lisp-dir
       (expand-file-name "site-lisp" user-emacs-directory))
 
-(setq settings-dir
-      (expand-file-name "settings" user-emacs-directory))
+(setq bartuka-dir
+      (expand-file-name "bartuka" user-emacs-directory))
 
 ;; Set up load path
-(add-to-list 'load-path settings-dir)
+(add-to-list 'load-path bartuka-dir)
 (add-to-list 'load-path site-lisp-dir)
 
-;; Keep emacs Custom-settings in separate file
+;; Keep emacs Custom file in separate file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
 
@@ -20,7 +20,7 @@
   (when (file-directory-p project)
     (add-to-list 'load-path project)))
 
-(require 'setup-packages)
+(require 'bartuka-packages)
 
 ;; Are we on a mac?
 (setq is-mac (equal system-type 'darwin))
@@ -32,7 +32,6 @@
      cider
      clj-refactor
      clojure-mode
-     clojure-mode-extra-font-locking
      clojure-snippets
      diff-hl
      diminish
@@ -60,6 +59,7 @@
      projectile
      shrink-whitespace
      smex
+     wgrep
      yasnippet
      yasnippet-snippets
      )))
@@ -70,54 +70,41 @@
    (package-refresh-contents)
    (init--install-packages)))
 
-;; changing the looks!
-(require 'appearance)
-
-;; Lets start with a smattering of sanity
-(require 'sane-defaults)
-
 (when is-mac
   (require 'exec-path-from-shell)
   (exec-path-from-shell-initialize))
 
-;; setup extensions
-(require 'setup-dired)
-(require 'setup-ido)
-(require 'setup-hippie-expand)
-(require 'setup-snippets)
-(require 'setup-vc)
-(require 'setup-smex)
-(require 'setup-org)
-(require 'setup-rss)
-(require 'setup-spell)
-(require 'setup-encryption)
-(require 'setup-projectile)
-(require 'setup-perspective)
-(require 'setup-paredit)
-
-(require 'expand-region)
-(require 'change-inner)
-(require 'jump-char)
+(dolist (file '(bartuka-appearance
+                bartuka-sane-defaults
+                bartuka-dired
+                bartuka-ido
+                bartuka-hippie-expand
+                bartuka-snippets
+                bartuka-vc
+                bartuka-smex
+                bartuka-org
+                bartuka-rss
+                bartuka-spell
+                bartuka-encryption
+                bartuka-projectile
+                bartuka-perspective
+                bartuka-paredit
+                bartuka-buffer
+                bartuka-mode-mappings
+                bartuka-key-bindings
+                bartuka-clojure-mode
+                bartuka-java
+                bartuka-eshell))
+  (require file))
 
 (defun bk/activate--code-review ()
   (interactive)
   (require 'code-review))
 
-;; language specific setup files
-(eval-after-load 'clojure-mode '(require 'setup-clojure-mode))
-(eval-after-load 'cc-mode '(require 'setup-java))
-(eval-after-load 'eshell '(require 'setup-eshell))
-
-;; setup files to modes
-(require 'mode-mappings)
-
-;; setup key bindings
-(require 'key-bindings)
-
 ;; setup work specific files
 (add-hook 'after-init-hook
           (lambda ()
-            (load-file "~/.emacs.d/settings/work-cisco.el.gpg")
+            (load-file "~/.emacs.d/bartuka/work-cisco.el.gpg")
             (require 'work-cisco)))
 
 ;; Functions (load all files in defuns-dir)

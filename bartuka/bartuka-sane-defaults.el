@@ -174,4 +174,10 @@
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 
-(provide 'sane-defaults)
+;; When called with the minibuffer active, your command uses a
+;; recursive minibuffer to read input using `ido-completing-read'.
+;; Non-nil means to allow minibuffer commands while in the minibuffer
+
+(setq enable-recursive-minibuffers t)
+
+(provide 'bartuka-sane-defaults)

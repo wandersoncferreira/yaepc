@@ -1,5 +1,4 @@
 (require 'clojure-mode)
-(require 'clojure-mode-extra-font-locking)
 
 (require 'clj-refactor)
 (setq cljr-clojure-test-declaration "[clojure.test :refer [deftest is testing]]"
@@ -13,7 +12,7 @@
 ;; Hide nrepl buffers when switching buffers (switch to by prefixing with space)
 (setq nrepl-hide-special-buffers t)
 
-(defun bk/clojure--reset ()
+(defun bk/cider--reset ()
   (interactive)
   (cider-interactive-eval "(reset)"))
 
@@ -31,7 +30,7 @@
 
 (require 'clojure-snippets)
 
-(defun bk/cider--unalias-after-error ()
+(defun bk/cider--reset-alias-after-error ()
   (interactive)
   (let ((alias))
     (with-current-buffer (get-buffer "*cider-error*")
@@ -57,7 +56,9 @@
 
 (define-key cider-mode-map (kbd "C-,") 'complete-symbol)
 (define-key cider-mode-map (kbd "C-c C-l") 'cider-find-and-clear-repl-buffer)
-(define-key cider-mode-map (kbd "C-c r s") #'bk/clojure--reset)
+
+(define-key cider-mode-map (kbd "C-c r s") #'bk/cider--reset)
+(define-key cider-mode-map (kbd "C-c r a") #'bk/cider--reset-alias-after-error)
 
 (define-key clojure-mode-map (kbd "M-s f") 'sf/focus-at-point)
 (define-key clojure-mode-map [remap paredit-forward] 'clojure-forward-logical-sexp)
@@ -68,4 +69,21 @@
 
 (define-key clj-refactor-map (kbd "C-x C-r") 'cljr-rename-file)
 
-(provide 'setup-clojure-mode)
+;; include cider buffer into current workspace
+(require 'perspective)
+
+(add-hook 'cider-repl-mode-hook
+          (lambda ()
+            (persp-add-buffer (current-buffer))))
+
+;; include test report buffer to current perspective too
+(add-hook 'cider-test-report-mode-hook
+          (lambda ()
+            (persp-add-buffer (current-buffer))))
+
+;; temp buffers created by cider e.g. *cider-ns-refresh-log*
+(add-hook 'cider-popup-buffer-mode-hook
+          (lambda ()
+            (persp-add-buffer (current-buffer))))
+
+(provide 'bartuka-clojure-mode)

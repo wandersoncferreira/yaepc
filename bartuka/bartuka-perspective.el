@@ -2,4 +2,4 @@
 
 (persp-mode t)
 
-(provide 'setup-perspective)
+(provide 'bartuka-perspective)

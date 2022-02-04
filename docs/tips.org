@@ -4,7 +4,7 @@
 2. Default Global Magit keys
    1. =C-x g= (magit-status)
    2. =C-x M-g= (magit-dispatch)
-   3. =C-c M-g= (magit-file-dispatch) -> I remapped to =C-c g=
+   3. =C-c g= (magit-file-dispatch)
 3. Nice file dispatch magit commands
    1. blame =C-c g b=
    2. stage the current file =C-c g s=
@@ -31,3 +31,36 @@
    - see more at https://emacsredux.com/blog/2018/11/09/an-easy-kill/
 9. [ORG] Make a heading a new Roam node
    1. use =M-x org-id-get-create=
+10. add parens when unbalanced in Paredit using =C-q )=
+11. remove stray parens using =C-u DEL=
+12. =C-t= to toggle regexp search in IDO
+13. Isearch cheatsheet
+    | keybinding  | description                                                     |
+    |-------------+-----------------------------------------------------------------|
+    | C-s or C-r  | navigate through occurrences                                    |
+    | M-e         | edit the current search pattern                                 |
+    | M-n and M-p | cycle through previous search pattern                           |
+    | M-s-o       | switch the results of the search to =occur=                     |
+    | M-r         | to switch to regexp search                                      |
+    | M-c         | to toggle the case sensitivity                                  |
+    | RET         | to stop searching                                               |
+    | C-u C-SPACE | go back to the position before searching                        |
+    | C-s C-s     | search for the last pattern searched                            |
+    | C-s C-w     | search the word at point [extend selection with multiple =C-w=] |
+    | M-s .       | search the wider word at point                                  |
+14. Some snippets in =Clojure Mode= that are really useful right now
+    - defn
+    - fn
+    - clock
+    - ifl
+    - map
+    - print
+    - reduce
+    - opts
+    - is
+    - test
+    - ->
+    - ->>
+    - try
+    - whenl
+15. we can bookmark Info nodes too. just use =C-x r m= as usual

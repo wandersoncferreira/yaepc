@@ -30,9 +30,11 @@
 
 ;; Try out flx-ido for better flex matching between words
 (require 'flx-ido)
+
+;; smarter fuzzy matching for ido
 (flx-ido-mode 1)
 
-;; disable ido faces to see flx highlights.
+;; disable ido faces to see flx highlights
 (setq ido-use-faces nil)
 
 ;; flx-ido looks better with ido-vertical-mode
@@ -54,7 +56,7 @@
 (ido-ubiquitous-mode 1)
 
 ;; create a few shortcuts
-(add-hook 'ido-setup-hook
+(add-hook 'ido-bartuka-hook
           (lambda ()
             ;; go to home
             (define-key ido-file-completion-map (kbd "~")
@@ -66,4 +68,4 @@
                       (insert "~/")
                     (call-interactively 'self-insert-command)))))))
 
-(provide 'setup-ido)
+(provide 'bartuka-ido)

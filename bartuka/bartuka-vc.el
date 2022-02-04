@@ -50,4 +50,4 @@
 
 (require 'git-timemachine)
 
-(provide 'setup-vc)
+(provide 'bartuka-vc)

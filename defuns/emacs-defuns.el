@@ -37,3 +37,6 @@
                 (prin1 "\n\n")
                 (yes-or-no-p "Init file with problems, see *Message* buffer. Really quit Emacs? "))
             t))))
+
+;; disable the idea above
+(setq confirm-kill-emacs nil)

@@ -1,9 +1,11 @@
 #+title: Emacs Radar
 
-- [ ] git-messenger
+- [X] git-messenger
   - displays the git commit message of the current line
+  - <2022-01-31 Mon> don't need
 - [x] yasnippet
   - <2022-01-21 Fri> i never relied much in snippets, perhaps I should make yet another attempt
+  - <2022-01-31 Mon> created a new snippet to help me daily --> =fixed-clock=
 - [X] find-file-in-project
   - <2022-01-19 Wed> how this can help me work better with Clojure files?
   - <2022-01-26 Wed> I created shortcuts to access specific portions of the codebase I work with...
@@ -14,13 +16,16 @@
 - [X] crux
   - <2022-01-26 Wed> not going to use.
   - <2022-01-26 Wed> if I feel the need for one function there I might steal it and paste here
-- [ ] super-save
-- [ ] flyspell
+- [X] super-save
+- [X] flyspell
   - <2022-01-26 Wed> not enabled by default and I really like it, but
     when I profile my emacs session with flyspell enabled he is often
     the most resource hunger process. :(
-- [ ] hl-todo
-- [ ] inf-clojure
+  - <2022-01-31 Mon> =flyspell-prog-mode= is enabled in clojure-mode
+- [X] hl-todo
+  - <2022-01-31 Mon> don't need, a simple hook did the job for now.
+- [X] inf-clojure
+  - <2022-01-31 Mon> don't need
 - [ ] move-text
 - [x] easy-kill
   - <2022-01-26 Wed> to be honest I need to force myself to use it more often
@@ -28,5 +33,6 @@
 - [X] aggressive-indent
   - <2022-01-24 Mon> still mixed feelings about using it
   - <2022-01-26 Wed> disabled
-- [ ] auto-yasnippet
+- [X] auto-yasnippet
+  - <2022-01-31 Mon> don't need
 - [ ] bookmarks

@@ -22,11 +22,11 @@
 (setq org-capture-templates
       '(("c" "Cisco tasks" entry
          (file+headline "~/org/tasks.org" "Task list")
-         "\n\n** TODO %? %^g\n   SCHEDULED: %^t\n   :PROPERTIES:\n   :WHOM: cisco\n   :TOPIC: %^{Topic} \n   :END:"
+         "\n\n** TODO %? %^g\n   :PROPERTIES:\n   :WHOM: cisco\n   :TOPIC: %^{Topic} \n   :END:"
          :empty-lines 1)
         ("t" "Regular tasks" entry
          (file+headline "~/org/tasks.org" "Task list")
-         "\n\n** TODO %? %^g\n   :PROPERTIES:\n   :WHOM: %^{Whom}\n   :TOPIC: %^{Topic}\n   :END:"
+         "\n\n** TODO %? %^g"
          :empty-lines 1)))
 
 (setq org-agenda-files '("~/org/tasks.org"))
@@ -99,4 +99,4 @@
 
 (setq org-babel-clojure-backend 'cider)
 
-(provide 'setup-org)
+(provide 'bartuka-org)

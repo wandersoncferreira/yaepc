@@ -64,6 +64,8 @@
 ; bind pop to mark to C-x p due to very hard wired muscle memory
 (global-set-key (kbd "C-x p") #'pop-to-mark-command)
 
+(autoload 'jump-char-backward "jump-char")
+(autoload 'jump-char-forward "jump-char")
 (global-set-key (kbd "M-p") #'jump-char-backward)
 (global-set-key (kbd "M-n") #'jump-char-forward)
 
@@ -71,14 +73,16 @@
 (global-set-key (kbd "C-v") (lambda () (interactive) (scroll-up-command 8)))
 
 ;; editing
-
 (global-set-key (kbd "C-c k w") #'shrink-whitespace)
+
+(autoload 'change-inner "change-inner")
+(autoload 'change-outer "change-inner")
 
 (global-set-key (kbd "M-i") #'change-inner)
 (global-set-key (kbd "M-o") #'change-outer)
 
 (global-set-key (kbd "C-c k f") #'zap-up-to-char)
-(global-set-key (kbd "C-c k b") #'bk/zap-to-char-backward)
+(global-set-key (kbd "C-c k b") #'bk/zap-up-to-char-backward)
 (global-set-key (kbd "C-c d") #'bk/duplicate-current-line-or-region)
 
 (global-set-key (kbd "C-c r p") #'bk/point-to-register)
@@ -93,9 +97,12 @@
 
 (global-set-key (kbd "C-M-]") #'bk/indent-defun-at-point)
 
-
 ;; selection
+(autoload 'er/expand-region "expand-region")
 (global-set-key (kbd "C-=") #'er/expand-region)
+
+(global-set-key (kbd "C-x M-b") #'ibuffer)
+
 (global-set-key (kbd "C-x C-b") #'ido-switch-buffer-other-window)
 
 (when (fboundp 'isearch-occur)
@@ -157,6 +164,4 @@
      (define-key yas-minor-mode-map (kbd "C-c y x") 'yas-expand)
      (define-key yas-minor-mode-map (kbd "C-c y h") 'yas-describe-tables)))
 
-
-
-(provide 'key-bindings)
+(provide 'bartuka-key-bindings)

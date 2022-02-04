@@ -13,4 +13,4 @@
       projectile-completion-system 'ido
       projectile-mode-line-prefix " P")
 
-(provide 'setup-projectile)
+(provide 'bartuka-projectile)

@@ -1,0 +1,54 @@
+#+TITLE: Paredit
+
+ParEdit is a minor mode for performing structured editing of
+S-expression data.
+
+* Balancing
+
+* Basic insertion commands
+  - paredit-open-round: =(=
+  - paredit-close-round-and-newline: =)=
+  - paredit-close-round: =M-)=
+  - paredit-meta-doublequote: =M-"=
+  - paredit-comment-dwim: =M-;=
+  - paredit-newline: =C-j=
+
+* Deleting
+
+  - paredit-forward-delete: =C-d=
+  - paredit-backward-delete: =DEL=
+  - paredit-kill: =C-k=
+  - paredit-forward-kill-word: =M-d=
+  - paredit-backward-kill-word: =M-DEL=
+
+* Movement
+
+  - paredit-forward: =C-M-f=
+  - paredit-backward: =C-M-b=
+
+* Depth-changing
+
+  - paredit-wrap-around: =M-(=
+  - paredit-splice-sexp: =M-s=
+    - =(eat (|cky bcn) sdwch)=
+    - =(eat cky bcn sdwch)=
+  - paredit-splice-sexp-killing-backward: =M-<up>=
+  - paredit-splice-sexp-killing-forward: =M-<down>=
+  - paredit-raise-sexp: =M-r=
+    - =(eat (cky |bcn) sdwch)=
+    - =(eat |bcn sdwch)=
+    - =|bcn=
+
+* Barfage & Slurpage
+
+  - paredit-forward-slurp-sexp: =C-)=
+  - paredit-forward-barf-sexp: =C-}=
+  - paredit-backward-slurp-sexp: =C-(=
+  - paredit-backward-barf-sexp: =C-{=
+
+* Miscellaneous
+
+  - paredit-split-sexp: =M-S-s=
+  - paredit-join-sexp: =M-S-j=
+
+* in the world

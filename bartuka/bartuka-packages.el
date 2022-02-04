@@ -13,4 +13,4 @@
       (package-install it)))
   (delete-other-windows))
 
-(provide 'setup-packages)
+(provide 'bartuka-packages)

@@ -7,7 +7,6 @@
       password-cache-expiry nil
       auth-sources (nreverse auth-sources)
       auth-source-cache-expiry nil
-      auth-source-debug t
       epa-file-encrypt-to '("wand@hey.com"))
 
 (set 'epg-pinentry-mode nil)
@@ -20,4 +19,4 @@
              :host "bitwarden.app"
              :user "bartuka")))
 
-(provide 'setup-encryption)
+(provide 'bartuka-encryption)

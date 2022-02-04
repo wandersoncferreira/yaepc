@@ -24,11 +24,27 @@
   (when (font-available-p "Monaco")
     (set-face-attribute 'default nil :font (format "Monaco %s" size))))
 
+(defun bk/set-jetbrains-mono-font (size)
+  "Requires `brew install font-jetbrains-mono`."
+  (when (font-available-p "JetBrains Mono")
+    (set-face-attribute 'default nil :font (format "JetBrains Mono %s" size))))
+
+(defun bk/input-mono-font (size)
+  (when (font-available-p "Input Mono")
+    (set-face-attribute 'default nil :font (format "Input Mono %s" size))))
+
 (defun bk/dark-background ()
   (interactive)
   (load-theme 'default-black t))
 
-(bk/dark-background)
+;; load theme
+(load-theme 'tango-dark t)
+
+;; define font
+(bk/input-mono-font 13)
+
+;; remove cursor in non selected window
+(setq cursor-in-non-selected-windows nil)
 
 ;; enable matching parens to be highlighted
 (show-paren-mode +1)
@@ -48,7 +64,6 @@
 (eval-after-load "whitespace" '(diminish 'whitespace-mode))
 (eval-after-load "flyspell" '(diminish 'flyspell-mode))
 (eval-after-load "projectile" '(diminish 'projectile-mode))
-
 
 (defmacro rename-modeline (package-name mode new-name)
   `(eval-after-load ,package-name
@@ -73,6 +88,7 @@
 
 ;; whitespace
 (require 'whitespace)
+
 (add-hook 'prog-mode-hook 'whitespace-mode)
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
@@ -80,4 +96,16 @@
       whitespace-style
       '(face tabs empty trailing lines-tail))
 
-(provide 'appearance)
+;; highlight
+(defun highlight-todos ()
+  (font-lock-add-keywords
+   nil
+   '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t))))
+
+(eval-after-load "clojure-mode"
+  '(add-hook 'clojure-mode-hook #'highlight-todos))
+
+(eval-after-load "elisp-mode"
+  '(add-hook 'emacs-lisp-mode-hook #'highlight-todos))
+
+(provide 'bartuka-appearance)
