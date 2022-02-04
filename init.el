@@ -11,9 +11,6 @@
 (add-to-list 'load-path bartuka-dir)
 (add-to-list 'load-path site-lisp-dir)
 
-;; Keep emacs Custom file in separate file
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file)
 
 ;; Add external projects to load path
 (dolist (project (directory-files site-lisp-dir t "\\w+"))
@@ -69,10 +66,6 @@
   (error
    (package-refresh-contents)
    (init--install-packages)))
-
-(when is-mac
-  (require 'exec-path-from-shell)
-  (exec-path-from-shell-initialize))
 
 (dolist (file '(bartuka-appearance
                 bartuka-sane-defaults

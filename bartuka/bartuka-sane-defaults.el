@@ -180,4 +180,12 @@
 
 (setq enable-recursive-minibuffers t)
 
+;; Keep emacs Custom file in separate file
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(load custom-file)
+
+(when is-mac
+  (require 'exec-path-from-shell)
+  (exec-path-from-shell-initialize))
+
 (provide 'bartuka-sane-defaults)
