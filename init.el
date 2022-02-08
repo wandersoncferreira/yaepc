@@ -73,8 +73,7 @@
                 extra-rss
                 extra-spell
                 extra-encryption
-                extra-projectile
-                extra-perspective
+                extra-projects
                 extra-paredit
                 extra-buffer
                 extra-mode-mappings
