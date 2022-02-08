@@ -164,4 +164,7 @@
      (define-key yas-minor-mode-map (kbd "C-c y x") 'yas-expand)
      (define-key yas-minor-mode-map (kbd "C-c y h") 'yas-describe-tables)))
 
+;;; enable theme
+(global-set-key (kbd "C-h t") #'load-theme)
+
 (provide 'extra-key-bindings)
