@@ -40,8 +40,7 @@
 ;; load theme
 (load-theme 'tango-dark t)
 
-;; define font
-(bk/input-mono-font 13)
+(bk/input-mono-font 14)
 
 ;; remove cursor in non selected window
 (setq cursor-in-non-selected-windows nil)
