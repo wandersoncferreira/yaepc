@@ -1,6 +1,7 @@
 ;; lots of config here https://gitlab.com/skybert/my-little-friends/blob/master/emacs/.emacs#L780
 
 (require 'lsp-java)
+
 (require 'lsp)
 
 ;; support to Lombok
@@ -27,6 +28,7 @@
 
 (add-hook 'java-mode-hook 'bk/java-mode-hook)
 
-(define-key lsp-mode-map (kbd "M-RET") #'lsp-execute-code-action)
+(eval-after-load "lsp-mode"
+  '(define-key lsp-mode-map (kbd "M-RET") #'lsp-execute-code-action))
 
 (provide 'extra-java)

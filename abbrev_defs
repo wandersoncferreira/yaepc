@@ -7,7 +7,6 @@
 (define-abbrev-table 'global-abbrev-table
   '(
     ("auhtorization" "authorization" nil :count 0)
-    ("clojure" "clojure" nil :count 24)
     ("conenct" "connect" nil :count 0)
     ("conrtol" "control" nil :count 0)
     ("defautls" "defaults" nil :count 0)
@@ -21,7 +20,6 @@
     ("fulfil" "fulfill" nil :count 0)
     ("glag" "flag" nil :count 0)
     ("haev" "have" nil :count 1)
-    ("java" "java" nil :count 28)
     ("leakeage" "leakage" nil :count 0)
     ("optiomal" "optimal" nil :count 0)
     ("poit" "point" nil :count 0)
@@ -40,4 +38,3 @@
     ("verifuing" "verifying" nil :count 0)
     ("wsa" "was" nil :count 0)
    ))
-

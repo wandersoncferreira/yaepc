@@ -97,6 +97,7 @@
 
 ;; save history between sections
 (require 'savehist)
+
 (savehist-mode +1)
 
 ;; split the window and move the cursor there
@@ -120,7 +121,9 @@
 
 ;; setup abbreviations
 (require 'abbrev)
+
 (setq-default abbrev-mode t)
+
 (define-abbrev-table 'global-abbrev-table
   '(
     ("reslt" "result" nil 0)

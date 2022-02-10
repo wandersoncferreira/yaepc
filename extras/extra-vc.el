@@ -1,4 +1,5 @@
 (require 'diff-hl)
+
 (global-diff-hl-mode +1)
 
 (require 'magit)

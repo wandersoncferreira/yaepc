@@ -37,6 +37,7 @@ abort completely with `C-g'."
 (setq save-abbrevs 'silently)
 
 (require 'flyspell)
+
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
 (provide 'extra-spell)

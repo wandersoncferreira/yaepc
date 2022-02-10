@@ -39,6 +39,7 @@
 
 ;; flx-ido looks better with ido-vertical-mode
 (require 'ido-vertical-mode)
+
 (ido-vertical-mode)
 
 ;; C-n/p is more intuitive in vertical layout
@@ -46,6 +47,7 @@
 
 ;; Ido at point (C-,)
 (require 'ido-at-point)
+
 (ido-at-point-mode)
 
 ;; Use ido everywhere
@@ -53,6 +55,7 @@
 (ido-everywhere 1)
 
 (require 'ido-completing-read+)
+
 (ido-ubiquitous-mode 1)
 
 ;; create a few shortcuts

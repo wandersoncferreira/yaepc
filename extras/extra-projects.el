@@ -2,7 +2,6 @@
 
 (persp-mode t)
 
-
 (require 'projectile)
 
 (projectile-mode +1)

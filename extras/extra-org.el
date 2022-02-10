@@ -32,11 +32,13 @@
 (setq org-agenda-files '("~/org/tasks.org"))
 
 (require 'org-roam)
+
 (setq org-roam-directory "~/roam-v2")
 
 (org-roam-db-autosync-mode)
 
 (require 'org-roam-dailies)
+
 (setq org-roam-dailies-directory "~/roam-v2/dailies")
 
 ;;; Blog
@@ -45,6 +47,7 @@
 ;; it to the right place.
 
 (require 'ox-hugo)
+
 (setq org-hugo-base-dir "~/code/wandersoncferreira.github.io"
       org-hugo-section "items"
       org-hugo-front-matter-format "yaml")

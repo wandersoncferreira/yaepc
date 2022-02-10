@@ -38,7 +38,7 @@
   (load-theme 'default-black t))
 
 ;; load theme
-(load-theme 'tango-dark t)
+(load-theme 'tango t)
 
 (bk/input-mono-font 14)
 

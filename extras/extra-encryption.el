@@ -1,5 +1,7 @@
 (require 'epa)
+
 (require 'auth-source)
+
 (require 'org-crypt)
 
 (setq epg-gpg-program "gpg"

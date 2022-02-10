@@ -1,4 +1,5 @@
 (require 'dired)
+
 (require 'dired-x)
 
 ;; Move files between split panes
