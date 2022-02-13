@@ -29,18 +29,36 @@
   (when (font-available-p "JetBrains Mono")
     (set-face-attribute 'default nil :font (format "JetBrains Mono %s" size))))
 
-(defun bk/input-mono-font (size)
+(defun bk/set-input-mono-font (size)
   (when (font-available-p "Input Mono")
     (set-face-attribute 'default nil :font (format "Input Mono %s" size))))
+
+(defun bk/set-ibm-plex-mono-font (size)
+  (when (font-available-p "IBM Plex Mono")
+    (set-face-attribute 'default nil :font (format "IBM Plex Mono %s" size))))
 
 (defun bk/dark-background ()
   (interactive)
   (load-theme 'default-black t))
 
-;; load theme
-(load-theme 'tango t)
+(defun bk/almost-mono-white-customizations ()
+  ;; (set-face-attribute 'lazy-highlight nil :background "khaki1")
+  ;; (set-face-attribute 'isearch nil :background "khaki1")
+  ;; (set-face-attribute 'region nil :background "khaki1")
 
-(bk/input-mono-font 14)
+  (eval-after-load "diff-hl"
+    '(progn
+       (set-face-attribute 'diff-hl-change nil :background "DeepSkyBlue1")
+       (set-face-attribute 'diff-hl-delete nil :background "PaleVioletRed1")
+       (set-face-attribute 'diff-hl-insert nil :background "DarkSeaGreen2"))))
+
+;; mark custom themes as safe
+(setq custom-safe-themes t)
+
+(load-theme 'almost-mono-white t)
+
+;; change default font
+(bk/set-ibm-plex-mono-font 16)
 
 ;; remove cursor in non selected window
 (setq cursor-in-non-selected-windows nil)
