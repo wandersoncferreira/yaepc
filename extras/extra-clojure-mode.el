@@ -86,4 +86,18 @@
           (lambda ()
             (persp-add-buffer (current-buffer))))
 
+;;; fix the modeline indicator for cider.
+;;; I'd like to see only " cider[connected:<port>]" or " cider[not conencted]"
+(defun bk/cider--modeline-info ()
+  (if-let* ((current-connection (ignore-errors (cider-current-repl))))
+      (with-current-buffer current-connection
+        (concat
+         (symbol-name cider-repl-type)
+         (when cider-mode-line-show-connection
+           (format ":connected:%s" (plist-get nrepl-endpoint :port)))))
+    "not connected"))
+
+(setq cider-mode-line
+      '(:eval (format " cider[%s]" (bk/cider--modeline-info))))
+
 (provide 'extra-clojure-mode)
