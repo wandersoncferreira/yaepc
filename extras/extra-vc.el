@@ -2,6 +2,8 @@
 
 (global-diff-hl-mode +1)
 
+(diff-hl-dired-mode +1)
+
 (require 'magit)
 
 ;; what magit-sections should be visible in the status buffer.
@@ -26,6 +28,8 @@
 
 (add-hook 'git-commit-mode-hook 'my/magit-cursor-fix)
 
+;; if using Magit 2.4 or newer these lines are recommended to be used
+(add-hook 'magit-pre-refresh-hook 'diff-hl-magit-pre-refresh)
 (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
 
 (setq magit-completing-read-function 'magit-ido-completing-read)
