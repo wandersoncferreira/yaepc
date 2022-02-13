@@ -1,0 +1,28 @@
+#+TITLE: Registers
+
+Most used register types:
+
+- **text in register**
+  - Suppose I want a chunk of text but am doing something that will
+    pollute my kill ring, so I can't just yank (paste) every
+    time. Stick the text in a register with selecting the text and
+    =C-x r s SOME-KEY= and later just do =C-x r i SOME-KEY=.
+
+    Often I put the text on =p= key because my fingers and mind like
+    doing =C-x rip=.
+
+  - **Windows in registers**
+    - Window setup can be carefully crafted: I might have four panes,
+      one of my DB, one of my code, one or two of my REPLs, and one of
+      my browser. It's my dashboard view. But sometimes I need to
+      leave the dashboard and focus on just one of those.
+
+      Window registers to the rescue!
+
+      I save my view with =C-x r w SOME-KEY= and come back with =C-x r
+      j SOME-KEY= when I'm done with my focused work.
+
+  - **Point in register**
+    - If you are working in multiple file locations, especially the
+      case when I'm saving screen real-estate: save the location of
+      your cursor with =C-x r <space> SOME-KEY=.
