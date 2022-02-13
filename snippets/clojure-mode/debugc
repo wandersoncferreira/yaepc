@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: debugc
+# key: debugc
+# --
+(persist-scope)
