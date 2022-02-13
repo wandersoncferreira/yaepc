@@ -64,3 +64,5 @@
     - try
     - whenl
 15. we can bookmark Info nodes too. just use =C-x r m= as usual
+16. use =diff-hl-show-hunk= functions
+    1. If you want to navigate to next changed hunk =diff-hl-show-hunk-next=
