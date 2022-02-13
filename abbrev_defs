@@ -20,7 +20,9 @@
     ("fulfil" "fulfill" nil :count 0)
     ("glag" "flag" nil :count 0)
     ("haev" "have" nil :count 1)
+    ("insteaf" "instead" nil :count 0)
     ("leakeage" "leakage" nil :count 0)
+    ("libarry" "library" nil :count 0)
     ("optiomal" "optimal" nil :count 0)
     ("poit" "point" nil :count 0)
     ("previos" "previous" nil :count 0)
@@ -38,3 +40,4 @@
     ("verifuing" "verifying" nil :count 0)
     ("wsa" "was" nil :count 0)
    ))
+
