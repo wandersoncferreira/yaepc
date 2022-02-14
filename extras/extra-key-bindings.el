@@ -85,6 +85,8 @@
 (global-set-key (kbd "C-c k b") #'bk/zap-up-to-char-backward)
 (global-set-key (kbd "C-c d") #'bk/duplicate-current-line-or-region)
 
+(global-set-key (kbd "C-c D") #'bk/delete-file-and-buffer)
+
 (global-set-key (kbd "C-c r p") #'bk/point-to-register)
 (global-set-key (kbd "C-c r j") #'bk/jump-to-register)
 
