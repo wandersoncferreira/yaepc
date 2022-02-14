@@ -64,11 +64,10 @@
 (dolist (file '(extra-appearance
                 extra-sane-defaults
                 extra-dired
-                extra-ido
+                extra-completion
                 extra-hippie-expand
                 extra-snippets
                 extra-vc
-                extra-smex
                 extra-org
                 extra-rss
                 extra-spell

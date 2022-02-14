@@ -74,4 +74,10 @@
 ;; Ignore .DS_Store files with ido
 (add-to-list 'ido-ignore-files "\\.DS_Store")
 
-(provide 'extra-ido)
+(require 'smex)
+
+(setq smex-history-length 10
+      smex-prompt-string "Fire: ")
+
+
+(provide 'extra-completion)
