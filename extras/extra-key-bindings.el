@@ -169,4 +169,7 @@
 ;;; enable theme
 (global-set-key (kbd "C-h t") #'load-theme)
 
+;; unbind minimize
+(global-unset-key (kbd "C-x C-z"))
+
 (provide 'extra-key-bindings)
