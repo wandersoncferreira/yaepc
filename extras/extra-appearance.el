@@ -104,14 +104,7 @@
        100))))
 
 ;; whitespace
-(require 'whitespace)
-
-(add-hook 'prog-mode-hook 'whitespace-mode)
 (add-hook 'before-save-hook 'whitespace-cleanup)
-
-(setq whitespace-line-column 80
-      whitespace-style
-      '(face tabs empty trailing lines-tail))
 
 ;; highlight
 (defun highlight-todos ()
