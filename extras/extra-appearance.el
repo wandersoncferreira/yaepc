@@ -58,7 +58,7 @@
 (load-theme 'almost-mono-white t)
 
 ;; change default font
-(bk/set-ibm-plex-mono-font 16)
+(bk/set-ibm-plex-mono-font 14)
 
 ;; remove cursor in non selected window
 (setq cursor-in-non-selected-windows nil)
