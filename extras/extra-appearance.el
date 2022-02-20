@@ -42,9 +42,9 @@
   (load-theme 'default-black t))
 
 (defun bk/almost-mono-white-customizations ()
-  ;; (set-face-attribute 'lazy-highlight nil :background "khaki1")
-  ;; (set-face-attribute 'isearch nil :background "khaki1")
-  ;; (set-face-attribute 'region nil :background "khaki1")
+  (set-face-attribute 'lazy-highlight nil :background "khaki1")
+  (set-face-attribute 'isearch nil :background "khaki1")
+  (set-face-attribute 'region nil :background "khaki1")
 
   (eval-after-load "diff-hl"
     '(progn
@@ -55,10 +55,10 @@
 ;; mark custom themes as safe
 (setq custom-safe-themes t)
 
-(load-theme 'almost-mono-white t)
+(load-theme 'leuven t)
 
-;; change default font
-(bk/set-ibm-plex-mono-font 14)
+;; change font size
+(bk/set-ibm-plex-mono-font 15)
 
 ;; remove cursor in non selected window
 (setq cursor-in-non-selected-windows nil)
@@ -81,6 +81,7 @@
 (eval-after-load "whitespace" '(diminish 'whitespace-mode))
 (eval-after-load "flyspell" '(diminish 'flyspell-mode))
 (eval-after-load "projectile" '(diminish 'projectile-mode))
+(eval-after-load "flycheck" '(diminish 'flycheck-mode))
 
 (defmacro rename-modeline (package-name mode new-name)
   `(eval-after-load ,package-name
