@@ -18,7 +18,21 @@
 
 ;;; enable clojure
 (defun bk/enable-clojure-extensions ()
-  (clj-refactor-mode 1))
+  (clj-refactor-mode 1)
+  (lsp))
+
+(require 'flycheck)
+(setq flycheck-check-syntax-automatically '(mode-enabled save))
+
+(setq lsp-signature-auto-activate nil
+      lsp-enable-indentation nil
+      lsp-enable-completion-at-point nil
+      lsp-lens-enable nil
+      lsp-headerline-breadcrumb-enable nil
+      lsp-modeline-code-actions-enable nil
+      lsp-diagnostics-provider :flycheck
+      lsp-use-plists t
+      lsp-modeline-diagnostics-enable nil)
 
 (add-hook 'clojure-mode-hook 'bk/enable-clojure-extensions)
 
@@ -50,24 +64,47 @@
      (format "(ns-unalias *ns* '%s)" alias))
     (cider-repl-set-ns "user")))
 
-;; keybindings
-(define-key cider-repl-mode-map (kbd "C-,") 'complete-symbol)
-(define-key cider-repl-mode-map (kbd "C-l") 'cider-find-and-clear-repl-buffer)
-
-(define-key cider-mode-map (kbd "C-,") 'complete-symbol)
-(define-key cider-mode-map (kbd "C-c C-l") 'cider-find-and-clear-repl-buffer)
-
-(define-key cider-mode-map (kbd "C-c r s") #'bk/cider--reset)
-(define-key cider-mode-map (kbd "C-c r a") #'bk/cider--reset-alias-after-error)
-
-(define-key clojure-mode-map (kbd "M-s f") 'sf/focus-at-point)
+;; paredit adjustments
 (define-key clojure-mode-map [remap paredit-forward] 'clojure-forward-logical-sexp)
 (define-key clojure-mode-map [remap paredit-backward] 'clojure-backward-logical-sexp)
-(define-key clojure-mode-map (kbd "C-c C-l") 'cider-find-and-clear-repl-buffer)
+
+;; completion
+(define-key cider-repl-mode-map (kbd "C-,") 'complete-symbol)
+(define-key cider-mode-map (kbd "C-,") 'complete-symbol)
+
+;; focus to refactor
+(define-key clojure-mode-map (kbd "M-s f") 'sf/focus-at-point)
+
+;; threading is great!
 (define-key clojure-mode-map (kbd "C->") 'clojure-thread)
 (define-key clojure-mode-map (kbd "C-<") 'clojure-unwind)
 
-(define-key clj-refactor-map (kbd "C-x C-r") 'cljr-rename-file)
+;; clear repl
+(define-key clojure-mode-map (kbd "C-c C-l") 'cider-find-and-clear-repl-buffer)
+(define-key cider-repl-mode-map (kbd "C-l") 'cider-find-and-clear-repl-buffer)
+(define-key cider-mode-map (kbd "C-c C-l") 'cider-find-and-clear-repl-buffer)
+
+;; reset
+(define-key cider-mode-map (kbd "C-c C-m") nil)
+(define-key cider-repl-mode-map (kbd "C-c C-m") nil)
+(define-key cider-mode-map (kbd "C-c C-m r s") #'bk/cider--reset)
+(define-key cider-repl-mode-map (kbd "C-c C-m r s") #'bk/cider--reset)
+(define-key cider-mode-map (kbd "C-c C-m r a") #'bk/cider--reset-alias-after-error)
+
+;;; organize refactor keybindings
+;; find
+(define-key clojure-mode-map (kbd "C-c C-m f d") 'lsp-find-definition)
+;; show
+(define-key clojure-mode-map (kbd "C-c C-m s s") 'lsp-treemacs-symbols)
+(define-key clj-refactor-map (kbd "C-c C-m s e") 'lsp-treemacs-errors-list)
+;; rename
+(define-key clj-refactor-map (kbd "C-c C-m r s") 'lsp-rename)
+(define-key clojure-mode-map (kbd "C-c C-m r f") 'cljr-rename-file)
+;; extract
+(define-key clj-refactor-map (kbd "C-c C-m e f") 'lsp-clojure-extract-function)
+;; inline
+(define-key clj-refactor-map (kbd "C-c C-m i s") 'lsp-clojure-inline-symbol)
+
 
 ;; include cider buffer into current workspace
 (require 'perspective)
