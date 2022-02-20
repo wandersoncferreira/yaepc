@@ -32,7 +32,9 @@
      expand-region
      find-file-in-project
      fix-word
+     flycheck
      flx-ido
+     forge
      git-timemachine
      ido-at-point
      ido-completing-read+
@@ -84,6 +86,14 @@
 
 (defun bk/activate--code-review ()
   (interactive)
+  (let ((list-dependencies '(closql
+                             ghub
+                             deferred
+                             a
+                             uuidgen
+                             emojify)))
+    (dolist (it list-dependencies)
+      (package-install it)))
   (require 'code-review))
 
 ;; setup work specific files
